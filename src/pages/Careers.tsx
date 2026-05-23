@@ -1,5 +1,5 @@
 import { useState, useRef } from 'react';
-import { Briefcase, MapPin, Clock, ChevronDown, CheckCircle2, X, Factory, Handshake, Zap } from 'lucide-react';
+import { Briefcase, MapPin, Clock, ChevronDown, CheckCircle2, X, Factory, Handshake } from 'lucide-react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 
 function GreenParticles() {
