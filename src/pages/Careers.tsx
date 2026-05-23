@@ -68,8 +68,8 @@ export default function Careers() {
 
   const jobs: Job[] = [
     {
-      id: 'bioenergy-ops',
-      title: 'Bioenergy Operations Manager',
+      id: 'operation-executive',
+      title: 'Operation Executive',
       department: 'Operations',
       location: 'Nagpur, Maharashtra',
       type: 'Full-time',
@@ -86,26 +86,6 @@ export default function Careers() {
         'Bachelor’s degree in Agricultural Engineering, Environmental Science, or related fields.',
       ],
       icon: Factory,
-    },
-    {
-      id: 'renewable-project',
-      title: 'Renewable Energy Project Executive',
-      department: 'Projects & Operations',
-      location: 'Nagpur, Maharashtra',
-      type: 'Full-time',
-      summary: 'Coordinate end-to-end execution of biomass and bioenergy installations, ensuring project milestones, equipment commissioning, and site safety.',
-      responsibilities: [
-        'Manage site mobilization and contractor performance tracking.',
-        'Oversee daily installation schedules for biomass processing machinery.',
-        'Conduct root cause analysis for operational delays and provide technical resolutions.',
-        'Collaborate with supply chain teams to ensure timely delivery of project materials.',
-      ],
-      requirements: [
-        '2+ years experience in renewable energy, infrastructure, or industrial project management.',
-        'Strong technical understanding of mechanical and civil drawings.',
-        'Bachelor’s degree in Mechanical, Civil, or Electrical Engineering.',
-      ],
-      icon: Zap,
     },
     {
       id: 'business-development',
@@ -236,7 +216,7 @@ export default function Careers() {
         <GreenParticles />
 
         {/* Content Overlay */}
-        <div className="max-w-7xl mx-auto px-6 w-full relative z-20">
+        <div className="max-w-7xl mx-auto px-4 md:px-8 lg:px-16 w-full relative z-20">
           <div className="max-w-3xl space-y-6 text-left">
             {/* Tag/Badge */}
             <motion.div
@@ -253,7 +233,7 @@ export default function Careers() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.15 }}
-              className="font-display font-bold text-4xl sm:text-5xl lg:text-6xl text-white leading-tight"
+              className="font-display font-bold text-3xl md:text-5xl lg:text-7xl text-white leading-tight"
             >
               Join the Clean <span className="text-[#00A8C6]">Energy Revolution</span>
             </motion.h1>
@@ -272,7 +252,7 @@ export default function Careers() {
       </section>
 
       {/* Open Positions */}
-      <section className="py-24 max-w-4xl mx-auto px-6">
+      <section className="py-24 max-w-4xl mx-auto px-4 md:px-8">
         <div className="text-center mb-16">
           <h2 className="font-display font-bold text-2xl sm:text-3xl text-primary">Open Positions</h2>
           <p className="text-gray-500 text-xs sm:text-sm mt-2">
@@ -372,7 +352,7 @@ export default function Careers() {
 
       {/* Talent Pool Section */}
       <section className="py-20 bg-teal-50/20 border-t border-teal-50">
-        <div className="max-w-xl mx-auto px-6 text-center">
+        <div className="max-w-xl mx-auto px-4 md:px-8 text-center">
           <Briefcase className="w-10 h-10 text-primary mx-auto mb-6" />
           <h2 className="font-display font-bold text-2xl text-primary mb-4">Don't see the right role?</h2>
           <p className="text-gray-600 text-xs sm:text-sm mb-8 leading-relaxed">
@@ -385,18 +365,18 @@ export default function Careers() {
               <span>You've successfully joined our Talent Pool!</span>
             </div>
           ) : (
-            <form onSubmit={handleTalentPoolSubmit} className="flex gap-2 max-w-md mx-auto">
+            <form onSubmit={handleTalentPoolSubmit} className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
               <input
                 type="email"
                 value={talentEmail}
                 onChange={(e) => setTalentEmail(e.target.value)}
                 placeholder="Submit your email"
                 required
-                className="flex-grow bg-white border border-teal-100/50 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/50"
+                className="flex-grow w-full bg-white border border-teal-100/50 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/50"
               />
               <button
                 type="submit"
-                className="bg-primary hover:bg-primary-light text-white px-6 py-3 rounded-xl text-xs font-semibold uppercase tracking-wider transition-colors whitespace-nowrap"
+                className="w-full sm:w-auto bg-primary hover:bg-primary-light text-white px-6 py-3 rounded-xl text-xs font-semibold uppercase tracking-wider transition-colors whitespace-nowrap"
               >
                 Join Pool
               </button>

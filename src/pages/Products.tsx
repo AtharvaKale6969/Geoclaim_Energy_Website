@@ -1,9 +1,9 @@
-import { useEffect } from 'react';
-import { motion, useMotionValue, useSpring, useScroll, useTransform } from 'framer-motion';
+import { useState, useEffect } from 'react';
+import { motion, useMotionValue, useSpring, useScroll, useTransform, AnimatePresence } from 'framer-motion';
 import { Flame, Factory, Droplets, Settings, CheckCircle2, ChevronRight } from 'lucide-react';
 
 interface ServiceShowcaseCardProps {
-  image: string;
+  image: string | string[];
   title: string;
   desc: string;
   integrationTime: string;
@@ -12,6 +12,18 @@ interface ServiceShowcaseCardProps {
 }
 
 function ServiceShowcaseCard({ image, title, desc, integrationTime, idx, onPageChange }: ServiceShowcaseCardProps) {
+  const images = Array.isArray(image) ? image : [image];
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [isHovered, setIsHovered] = useState(false);
+
+  useEffect(() => {
+    if (images.length > 1 && !isHovered) {
+      const interval = setInterval(() => {
+        setCurrentImageIndex((prev) => (prev + 1) % images.length);
+      }, 4000);
+      return () => clearInterval(interval);
+    }
+  }, [images.length, isHovered]);
   const x = useMotionValue(0);
   const y = useMotionValue(0);
   const mouseX = useSpring(x, { stiffness: 80, damping: 20 });
@@ -72,23 +84,69 @@ function ServiceShowcaseCard({ image, title, desc, integrationTime, idx, onPageC
       {/* The Inner Card Container */}
       <div className="relative border border-primary/10 rounded-2xl bg-white/80 backdrop-blur-md shadow-sm overflow-hidden flex flex-col h-full">
         {/* Top Image Section (Full Width) */}
-        <div className="relative overflow-hidden h-44 sm:h-48 w-full border-b border-primary/5">
-          {/* Parallax & Zoom Image */}
-          <motion.img
-            alt={title}
-            className="w-full h-full object-cover select-none pointer-events-none origin-center"
-            src={image}
-            style={{ x: mouseX, y: mouseY }}
-            animate={{
-              scale: [1, 1.03, 1],
-            }}
-            transition={{
-              duration: 18,
-              repeat: Infinity,
-              ease: "easeInOut"
-            }}
-            whileHover={{ scale: 1.06 }}
-          />
+        <div 
+          className="relative overflow-hidden h-44 sm:h-48 w-full border-b border-primary/5 group/slider bg-white/40 flex items-center justify-center"
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
+        >
+          {/* Parallax & Zoom Image Carousel */}
+          <AnimatePresence mode="wait">
+            <motion.img
+              key={currentImageIndex}
+              alt={`${title} - slide ${currentImageIndex + 1}`}
+              className="absolute inset-0 w-full h-full object-contain select-none pointer-events-none origin-center p-3 md:p-4"
+              src={images[currentImageIndex]}
+              style={{ x: mouseX, y: mouseY }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1, scale: [1, 1.03, 1] }}
+              exit={{ opacity: 0 }}
+              transition={{
+                opacity: { duration: 0.8 },
+                scale: { duration: 18, repeat: Infinity, ease: "easeInOut" }
+              }}
+              whileHover={{ scale: 1.06 }}
+            />
+          </AnimatePresence>
+
+          {/* Dots Indicator */}
+          {images.length > 1 && (
+            <div className="absolute bottom-3 left-0 right-0 flex justify-center gap-2 z-30">
+              {images.map((_, i) => (
+                <button
+                  key={i}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setCurrentImageIndex(i);
+                  }}
+                  className={`w-2 h-2 rounded-full transition-all duration-300 ${i === currentImageIndex ? 'bg-accent w-4' : 'bg-white/50 hover:bg-white/100'}`}
+                />
+              ))}
+            </div>
+          )}
+
+          {/* Nav Arrows */}
+          {images.length > 1 && (
+            <>
+              <button 
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setCurrentImageIndex((prev) => (prev - 1 + images.length) % images.length);
+                }}
+                className="absolute left-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-black/20 text-white flex items-center justify-center opacity-0 group-hover/slider:opacity-100 transition-opacity z-30 hover:bg-black/40"
+              >
+                &#10094;
+              </button>
+              <button 
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setCurrentImageIndex((prev) => (prev + 1) % images.length);
+                }}
+                className="absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-black/20 text-white flex items-center justify-center opacity-0 group-hover/slider:opacity-100 transition-opacity z-30 hover:bg-black/40"
+              >
+                &#10095;
+              </button>
+            </>
+          )}
 
           {/* Dark Teal Gradient Overlay */}
           <div className="absolute inset-0 bg-gradient-to-t from-[#041523]/60 via-transparent to-transparent pointer-events-none z-10" />
@@ -170,14 +228,14 @@ export default function Products({ sectionId, onPageChange }: ProductsProps) {
       cardIntegration: 'Integration Time: ~4 Weeks'
     },
     {
-      id: 'rdf-processing-unit',
-      title: 'RDF Processing Unit',
+      id: 'rdf-processing-supply',
+      title: 'RDF Processing & Supply',
       icon: <Factory className="w-8 h-8 text-primary" />,
       tagline: 'Refuse-Derived Fuel Processing Systems',
       desc: 'Advanced shredding and separation technologies designed to process municipal solid waste and dry industrial waste into Refuse-Derived Fuel (RDF). This process redirects non-recyclable high-calorific materials from landfills directly into energy recovery cycles.',
       benefits: ['Diverts up to 90% of dry waste from landfills', 'Provides stable high-calorific alternative fuels', 'Reduces fuel processing costs', 'Meets strict waste management guidelines'],
       applications: ['Cement Industries', 'Waste-to-Energy Plants', 'Industrial Processing Units'],
-      image: '/rdf-processing.jpg',
+      image: '/RDF_Processing&Supply.jpg',
       cardTitle: 'Processing Layout',
       cardDesc: 'Shredding and separation systems optimized for maximum RDF calorific output.',
       cardIntegration: 'Setup Time: ~6 Weeks'
@@ -190,7 +248,7 @@ export default function Products({ sectionId, onPageChange }: ProductsProps) {
       desc: 'End-to-end design, construction, and operational setup for industrial biogas plants. We convert organic waste, food waste, and agricultural byproducts into clean biogas for heating, electricity generation, or vehicle fuel, along with organic compost.',
       benefits: ['Zero-waste organic processing', 'Produces green electricity and heating fuel', 'Generates nutrient-rich organic bio-fertilizer', 'Reduces methane emissions from organic decay'],
       applications: ['Municipal Organic Waste Hubs', 'Food Processing Facilities', 'Dairy & Poultry Farms'],
-      image: '/biogas-plant.jpg',
+      image: '/Biogas_Plant.png',
       cardTitle: 'AD Digester Design',
       cardDesc: 'Custom engineered anaerobic digesters for continuous waste-to-energy conversion.',
       cardIntegration: 'Commissioning: ~12 Weeks'
@@ -203,7 +261,7 @@ export default function Products({ sectionId, onPageChange }: ProductsProps) {
       desc: 'Strategic sourcing and supply of heavy machinery for waste management infrastructure. We provide custom shredders, separators, trommels, and briquetting machines from top global manufacturers, backed by full installation and maintenance support.',
       benefits: ['Highly durable machinery engineered for heavy-duty sorting', 'Custom system design fitting client footprints', 'Full operational training for site engineers', '24/7 technical support and parts availability'],
       applications: ['Municipal Corporations', 'Private Waste Sorters', 'Biomass Plant Operators'],
-      image: '/plant-machinery.jpg',
+      image: ['/Composting Machine.jpeg', '/Belt Conveyer.jpeg', '/Bailing Machine.jpeg'],
       cardTitle: 'Technical Integration',
       cardDesc: 'Heavy-duty sorting and briquetting lines integrated into existing plant flows.',
       cardIntegration: 'Delivery Time: ~8 Weeks'
@@ -213,7 +271,7 @@ export default function Products({ sectionId, onPageChange }: ProductsProps) {
   return (
     <div className="min-h-screen bg-white">
       {/* Header / Hero Section */}
-      <section className="relative min-h-[70vh] flex items-center bg-[#041523] pt-36 pb-24 overflow-hidden border-b border-white/5">
+      <section className="relative min-h-[50vh] md:min-h-[70vh] flex items-center bg-[#041523] pt-32 pb-20 overflow-hidden border-b border-white/5">
         {/* Background Image Wrapper with Parallax & Ken Burns */}
         <motion.div
           className="absolute inset-0 z-0 pointer-events-none"
@@ -268,7 +326,7 @@ export default function Products({ sectionId, onPageChange }: ProductsProps) {
         </div>
 
         {/* Content Container (Aligned Left) */}
-        <div className="max-w-7xl mx-auto px-6 relative z-10 w-full">
+        <div className="max-w-7xl mx-auto px-4 md:px-8 lg:px-16 relative z-10 w-full">
           <div className="max-w-2xl text-left space-y-6">
             {/* Tagline / Badge */}
             <motion.div
@@ -286,7 +344,7 @@ export default function Products({ sectionId, onPageChange }: ProductsProps) {
               initial={{ opacity: 0, y: 25 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.15, ease: "easeOut" }}
-              className="font-display font-bold text-4xl sm:text-5xl lg:text-6xl text-white leading-tight tracking-tight"
+              className="font-display font-bold text-3xl md:text-5xl lg:text-7xl text-white leading-tight tracking-tight"
             >
               Products & <span className="text-accent">Services</span>
             </motion.h1>
@@ -310,15 +368,9 @@ export default function Products({ sectionId, onPageChange }: ProductsProps) {
             >
               <button
                 onClick={() => onPageChange('products', 'biomass-fuel-supply')}
-                className="bg-accent hover:bg-accent/90 text-primary px-7 py-3.5 rounded-full font-bold text-xs uppercase tracking-wider transition-all shadow-lg hover:-translate-y-0.5 text-center cursor-pointer"
+                className="bg-accent hover:bg-accent/90 text-primary px-7 py-3.5 rounded-full font-bold text-xs uppercase tracking-wider transition-all shadow-lg hover:-translate-y-0.5 text-center cursor-pointer w-full sm:w-auto"
               >
                 View Products
-              </button>
-              <button
-                onClick={() => onPageChange('products', 'comparison-table')}
-                className="bg-white/10 hover:bg-white/15 text-white border border-white/20 px-7 py-3.5 rounded-full font-bold text-xs uppercase tracking-wider transition-all text-center cursor-pointer"
-              >
-                Compare Fuels
               </button>
             </motion.div>
           </div>
@@ -326,7 +378,7 @@ export default function Products({ sectionId, onPageChange }: ProductsProps) {
       </section>
 
       {/* Services List */}
-      <section className="py-24 max-w-7xl mx-auto px-6 space-y-32">
+      <section className="py-20 md:py-24 max-w-7xl mx-auto px-4 md:px-8 lg:px-16 space-y-24 md:space-y-32">
         {services.map((srv, idx) => {
           const isEven = idx % 2 === 0;
           return (

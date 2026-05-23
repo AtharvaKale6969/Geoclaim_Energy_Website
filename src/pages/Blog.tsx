@@ -69,7 +69,7 @@ export default function Blog() {
       date: 'May 14, 2026',
       author: 'Dr. Sarah Thorne',
       readTime: '6 min read',
-      image: 'https://lh3.googleusercontent.com/aida/ADBb0uhwZGO2srOB1EguTAlbE4UE1cSQBnvETCqJLAOlUhVjN4udOZp1k2O7Jb_pmJMOS89T-iG7-wekr-9ENmy_1CNTtRzpre-d3Sqsy-dJVJ1C5evFgetv-iND61xb3nyGfZC2yctW6fESwK34xbU2zo9yV3FWmk-LHWki7nCf9bDN7EK9TIB2T0nyBPndDFXvy2c6o-mcWauxnycky_gLBvQ4kNrxrCK3wwXAkZnYX8t3PJIuHpHOD8JRaTRq_80pVFGH7iT9TNV8w7Q',
+      image: '/RDF_Processing&Supply.jpg',
     },
     {
       id: 'biomass-networks',
@@ -165,7 +165,7 @@ export default function Blog() {
         <GreenParticles />
 
         {/* Content Overlay */}
-        <div className="max-w-7xl mx-auto px-6 w-full relative z-20">
+        <div className="max-w-7xl mx-auto px-4 md:px-8 lg:px-16 w-full relative z-20">
           <div className="max-w-3xl space-y-6 text-left">
             {/* Tag/Badge */}
             <motion.div
@@ -182,7 +182,7 @@ export default function Blog() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.15 }}
-              className="font-display font-bold text-4xl sm:text-5xl lg:text-6xl text-white leading-tight"
+              className="font-display font-bold text-3xl md:text-5xl lg:text-7xl text-white leading-tight"
             >
               Blog & <span className="text-[#00A8C6]">Industry Insights</span>
             </motion.h1>
@@ -202,7 +202,7 @@ export default function Blog() {
 
 
       {/* Filter and Search Bar */}
-      <section className="py-12 max-w-7xl mx-auto px-6">
+      <section className="py-12 max-w-7xl mx-auto px-4 md:px-8 lg:px-16">
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 border-b border-teal-50 pb-8">
           {/* Categories */}
           <div className="flex flex-wrap gap-2 overflow-x-auto pb-2 md:pb-0">
@@ -236,7 +236,7 @@ export default function Blog() {
       </section>
 
       {/* Articles Grid */}
-      <section className="pb-24 max-w-7xl mx-auto px-6">
+      <section className="pb-24 max-w-7xl mx-auto px-4 md:px-8 lg:px-16">
         {filteredArticles.length === 0 ? (
           <div className="text-center py-20 bg-teal-50/10 border border-dashed border-teal-100 rounded-3xl">
             <p className="text-gray-500 text-sm">No articles match your search or filter settings.</p>

@@ -151,7 +151,7 @@ export default function Contact() {
 
         <GreenParticles />
 
-        <div className="relative z-20 w-full max-w-7xl mx-auto px-6 mt-16">
+        <div className="relative z-20 w-full max-w-7xl mx-auto px-4 md:px-8 lg:px-16 mt-16">
           <div className="max-w-3xl">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -171,7 +171,7 @@ export default function Contact() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
             >
-              <h1 className="font-display font-bold text-4xl sm:text-6xl text-white mb-6 leading-[1.1]">
+              <h1 className="font-display font-bold text-3xl md:text-5xl lg:text-7xl text-white mb-6 leading-[1.1]">
                 Partner for a Sustainable Future
               </h1>
             </motion.div>
@@ -193,7 +193,7 @@ export default function Contact() {
       </section>
 
       {/* Main Section */}
-      <section className="py-24 max-w-4xl mx-auto px-6">
+      <section className="py-24 max-w-4xl mx-auto px-4 md:px-8">
         {/* Contact Form */}
         <div className="bg-teal-50/10 border border-teal-100/50 p-8 sm:p-12 rounded-[2rem] shadow-sm relative overflow-hidden">
           <div className="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-[80px] pointer-events-none" />
@@ -261,7 +261,7 @@ export default function Contact() {
                 >
                   <option value="general">General Corporate Inquiry</option>
                   <option value="biomass">Biomass Fuel Sourcing</option>
-                  <option value="rdf">RDF Processing Systems</option>
+                  <option value="rdf-processing-supply">RDF Processing & Supply</option>
                   <option value="biogas">Biogas Turnkey Projects</option>
                   <option value="machinery">Plant Machinery Supply</option>
                   <option value="consulting">Strategic EHS Consulting</option>
@@ -296,7 +296,7 @@ export default function Contact() {
 
       {/* Headquarters Map Section */}
       <section className="py-24 bg-[#041523] border-t border-[#034152]">
-        <div className="max-w-7xl mx-auto px-6">
+        <div className="max-w-7xl mx-auto px-4 md:px-8 lg:px-16">
           <div className="text-center mb-16">
             <span className="inline-block px-4 py-1.5 rounded-full bg-[#00A8C6]/15 text-[#00A8C6] border border-[#00A8C6]/30 font-semibold text-xs uppercase tracking-widest mb-6">
               Our Locations
@@ -389,7 +389,7 @@ export default function Contact() {
 
       {/* Accordion FAQ Section */}
       <section className="py-24 bg-teal-50/10 border-t border-teal-50">
-        <div className="max-w-4xl mx-auto px-6">
+        <div className="max-w-4xl mx-auto px-4 md:px-8">
           <div className="text-center mb-16">
             <h2 className="font-display font-bold text-2xl sm:text-3xl text-primary">
               Frequently Asked Questions

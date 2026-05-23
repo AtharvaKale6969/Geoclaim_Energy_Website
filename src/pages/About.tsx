@@ -34,12 +34,12 @@ export default function About({ onPageChange }: AboutProps) {
           <div className="absolute inset-0 bg-gradient-to-r from-[#0c1d2b]/85 via-[#0c1d2b]/40 to-transparent"></div>
         </div>
 
-        <div className="relative z-10 max-w-7xl mx-auto px-6 w-full">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-8 lg:px-16 w-full">
           <div className="max-w-2xl text-white">
             <span className="inline-block px-4 py-1.5 rounded-full bg-primary/30 text-accent border border-white/10 font-semibold text-xs uppercase tracking-widest mb-6">
               About Geoclaim
             </span>
-            <h1 className="font-display font-bold text-4xl sm:text-5xl lg:text-6xl mb-6 leading-tight">
+            <h1 className="font-display font-bold text-3xl md:text-5xl lg:text-7xl mb-6 leading-tight">
               Pioneering the <br />
               <span className="text-accent">Eco-Industrial</span> Frontier
             </h1>
@@ -49,7 +49,7 @@ export default function About({ onPageChange }: AboutProps) {
             <div className="flex gap-4">
               <button
                 onClick={() => onPageChange('impact')}
-                className="bg-primary hover:bg-primary-light text-white px-8 py-4 rounded-full font-semibold transition-all shadow-lg shadow-black/20"
+                className="bg-primary hover:bg-primary-light text-white px-8 py-4 rounded-full font-semibold transition-all shadow-lg shadow-black/20 w-full sm:w-auto text-center"
               >
                 Explore Our Impact
               </button>
@@ -59,9 +59,9 @@ export default function About({ onPageChange }: AboutProps) {
       </section>
 
       {/* Redefining Industrial Power Section */}
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
+      <section className="py-12 md:py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-4 md:px-8 lg:px-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-start">
             <div>
               <h2 className="font-display font-bold text-3xl sm:text-4xl text-primary mb-6">
                 Redefining Industrial Power
@@ -81,14 +81,14 @@ export default function About({ onPageChange }: AboutProps) {
       </section>
 
       {/* Mission & Vision Section */}
-      <section className="py-24 bg-gradient-to-b from-teal-50/20 via-white to-teal-50/10 relative overflow-hidden">
+      <section className="py-12 md:py-16 bg-gradient-to-b from-teal-50/20 via-white to-teal-50/10 relative overflow-hidden">
         {/* Ambient floating elements */}
         <div className="absolute inset-0 pointer-events-none z-0">
           <div className="absolute top-1/3 left-10 w-72 h-72 bg-[#03818F]/5 rounded-full blur-[80px]" />
           <div className="absolute bottom-1/3 right-10 w-72 h-72 bg-[#00A8C6]/5 rounded-full blur-[80px]" />
         </div>
 
-        <div className="max-w-7xl mx-auto px-6 relative z-10">
+        <div className="max-w-7xl mx-auto px-4 md:px-8 lg:px-16 relative z-10">
           <div className="grid md:grid-cols-2 gap-12">
             {/* Mission Card */}
             <div className="group bg-white/70 backdrop-blur-md rounded-[24px] border border-teal-100/50 shadow-[0_15px_35px_rgba(3,129,143,0.06)] hover:shadow-[0_25px_50px_rgba(0,168,198,0.15)] hover:-translate-y-2 transition-all duration-500 overflow-hidden transform translate-z-0 flex flex-col justify-between h-full">
@@ -208,7 +208,7 @@ export default function About({ onPageChange }: AboutProps) {
 
       {/* Core Values Section */}
       <section className="py-24 bg-[#0c1d2b] text-white relative">
-        <div className="max-w-7xl mx-auto px-6">
+        <div className="max-w-7xl mx-auto px-4 md:px-8 lg:px-16">
           <div className="text-center mb-16 max-w-2xl mx-auto">
             <h2 className="font-display font-bold text-3xl sm:text-4xl text-white mb-4">
               Guided by Excellence
@@ -280,7 +280,7 @@ export default function About({ onPageChange }: AboutProps) {
           </svg>
         </div>
 
-        <div className="max-w-7xl mx-auto px-6 relative z-10">
+        <div className="max-w-7xl mx-auto px-4 md:px-8 lg:px-16 relative z-10">
           {/* Section Header */}
           <div className="text-center mb-16 max-w-3xl mx-auto">
             <h2 className="font-display font-bold text-3xl sm:text-4xl text-[#041523] mb-4">

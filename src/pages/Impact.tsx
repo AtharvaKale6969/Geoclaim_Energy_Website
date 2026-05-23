@@ -526,7 +526,7 @@ export default function Impact({ sectionId, onPageChange }: ImpactProps) {
         <GreenParticles />
 
         {/* Content Overlay */}
-        <div className="max-w-7xl mx-auto px-6 w-full relative z-20">
+        <div className="max-w-7xl mx-auto px-4 md:px-8 lg:px-16 w-full relative z-20">
           <div className="max-w-3xl space-y-6 text-left">
             {/* Staggered Tag/Badge */}
             <motion.div
@@ -544,7 +544,7 @@ export default function Impact({ sectionId, onPageChange }: ImpactProps) {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.15 }}
-              className="font-display font-bold text-4xl sm:text-5xl lg:text-6xl text-white leading-tight"
+              className="font-display font-bold text-3xl md:text-5xl lg:text-7xl text-white leading-tight"
             >
               Realizing True <br className="hidden sm:inline" />
               <span className="text-[#00A8C6]">Sustainability Impact</span>
@@ -574,14 +574,14 @@ export default function Impact({ sectionId, onPageChange }: ImpactProps) {
                     dashboard.scrollIntoView({ behavior: 'smooth', block: 'start' });
                   }
                 }}
-                className="bg-[#03818F] hover:bg-[#00A8C6] text-white px-6 py-3 rounded-full font-bold text-xs sm:text-sm uppercase tracking-wider transition-colors shadow-lg shadow-[#03818F]/20 flex items-center gap-2 group cursor-pointer"
+                className="bg-[#03818F] hover:bg-[#00A8C6] text-white px-6 py-3 rounded-full font-bold text-xs sm:text-sm uppercase tracking-wider transition-colors shadow-lg shadow-[#03818F]/20 flex items-center justify-center gap-2 group cursor-pointer w-full sm:w-auto"
               >
                 Explore Metrics
                 <ArrowDown className="w-4 h-4 group-hover:translate-y-1 transition-transform" />
               </button>
               <button
                 onClick={() => onPageChange('contact')}
-                className="bg-transparent hover:bg-white/10 text-white border border-white/20 hover:border-white/40 px-6 py-3 rounded-full font-bold text-xs sm:text-sm uppercase tracking-wider transition-all cursor-pointer"
+                className="bg-transparent hover:bg-white/10 text-white border border-white/20 hover:border-white/40 px-6 py-3 rounded-full font-bold text-xs sm:text-sm uppercase tracking-wider transition-all cursor-pointer w-full sm:w-auto text-center"
               >
                 Request Audit Report
               </button>
@@ -633,7 +633,7 @@ export default function Impact({ sectionId, onPageChange }: ImpactProps) {
           </div>
         </div>
 
-        <div className="max-w-7xl mx-auto px-6 relative z-10">
+        <div className="max-w-7xl mx-auto px-4 md:px-8 lg:px-16 relative z-10">
           <div className="text-center mb-16 space-y-4">
             <motion.span 
               initial={{ opacity: 0, y: 10 }}
@@ -664,7 +664,7 @@ export default function Impact({ sectionId, onPageChange }: ImpactProps) {
           </div>
 
           {/* Top Horizontal Toggle Navigation */}
-          <div className="flex flex-wrap justify-center gap-2 sm:gap-4 mb-12 max-w-4xl mx-auto p-1.5 bg-teal-50/20 border border-teal-100/40 rounded-full backdrop-blur-md relative z-20 shadow-[0_8px_30px_rgba(3,129,143,0.02)]">
+          <div className="flex flex-wrap justify-center gap-2 sm:gap-4 mb-12 max-w-4xl mx-auto p-1.5 bg-teal-50/20 border border-teal-100/40 rounded-3xl backdrop-blur-md relative z-20 shadow-[0_8px_30px_rgba(3,129,143,0.02)]">
             {dashboardTabs.map((tab) => {
               const isActive = activeTab === tab.id;
               return (
@@ -911,7 +911,7 @@ export default function Impact({ sectionId, onPageChange }: ImpactProps) {
           </div>
         </div>
 
-        <div className="max-w-7xl mx-auto px-6 relative z-10">
+        <div className="max-w-7xl mx-auto px-4 md:px-8 lg:px-16 relative z-10">
           <div className="text-center mb-20 space-y-4">
             <motion.span 
               initial={{ opacity: 0, y: 10 }}
@@ -1130,7 +1130,7 @@ export default function Impact({ sectionId, onPageChange }: ImpactProps) {
           </div>
         </div>
 
-        <div className="max-w-7xl mx-auto px-6 relative z-10">
+        <div className="max-w-7xl mx-auto px-4 md:px-8 lg:px-16 relative z-10">
           <div className="text-center mb-10 space-y-4">
             <motion.span 
               initial={{ opacity: 0, y: 10 }}

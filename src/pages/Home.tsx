@@ -22,7 +22,7 @@ const AnimatedCounter = ({ target, duration = 2000, suffix = '' }: { target: num
     const animate = (timestamp: number) => {
       if (!startTime) startTime = timestamp;
       const progress = Math.min((timestamp - startTime) / duration, 1);
-      
+
       // easeOutQuad
       const easedProgress = progress * (2 - progress);
       const currentValue = startValue + easedProgress * (target - startValue);
@@ -67,8 +67,8 @@ export default function Home({ onPageChange }: HomeProps) {
   };
 
   const circularJourney = [
-        { step: '01', title: 'Site Assessment', desc: 'Conducting site evaluation, waste audits, feasibility studies and requirement estimation before solution planning.', icon: <Recycle className="w-8 h-8" /> },
-        { step: '02', title: 'Waste Source Alignment', desc: 'Identifying, aligning and validating suitable waste streams and feedstock sources for optimal processing and energy recovery.', icon: <Settings className="w-8 h-8" /> },
+    { step: '01', title: 'Site Assessment', desc: 'Conducting site evaluation, waste audits, feasibility studies and requirement estimation before solution planning.', icon: <Recycle className="w-8 h-8" /> },
+    { step: '02', title: 'Waste Source Alignment', desc: 'Identifying, aligning and validating suitable waste streams and feedstock sources for optimal processing and energy recovery.', icon: <Settings className="w-8 h-8" /> },
     { step: '03', title: 'Processing', desc: 'Conversion into RDF, biomass, or biogas precursors.', icon: <Factory className="w-8 h-8" /> },
     { step: '04', title: 'Energy Conversion', desc: 'Thermal and chemical recovery into grid-ready power.', icon: <Flame className="w-8 h-8" /> },
     { step: '05', title: 'Sustainability', desc: 'Reduced carbon footprint and circular economy metrics.', icon: <ShieldCheck className="w-8 h-8" /> },
@@ -77,12 +77,12 @@ export default function Home({ onPageChange }: HomeProps) {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center pt-24 overflow-hidden">
+      <section className="relative min-h-[85vh] md:min-h-screen flex items-center pt-24 overflow-hidden">
         {/* Background Image with Overlay */}
         <div className="absolute inset-0 z-0">
           <img
             alt="Geoclaim Energy Industrial Plant"
-            className="w-full h-full object-cover object-center"
+            className="w-full h-full object-cover object-[center_top] md:object-center"
             src={heroImg}
           />
           <div className="absolute inset-0 bg-gradient-to-r from-teal-900/80 via-teal-800/50 to-transparent"></div>
@@ -94,7 +94,7 @@ export default function Home({ onPageChange }: HomeProps) {
           <div className="absolute w-96 h-96 bg-primary/10 rounded-full blur-[100px] bottom-[10%] right-[10%] animate-pulse" style={{ animationDelay: '2s' }} />
         </div>
 
-        <div className="relative z-20 max-w-7xl mx-auto px-6 w-full grid lg:grid-cols-2 gap-16 items-center">
+        <div className="relative z-20 max-w-7xl mx-auto px-4 md:px-8 lg:px-16 w-full grid lg:grid-cols-2 gap-16 items-center">
           {/* Left Column: Copy */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
@@ -105,7 +105,7 @@ export default function Home({ onPageChange }: HomeProps) {
             <span className="inline-block bg-primary/30 backdrop-blur-md border border-white/10 px-4 py-1.5 rounded-full text-accent font-semibold text-xs tracking-wider uppercase mb-6">
               RENEWABLE FUTURE
             </span>
-            <h1 className="font-display font-bold text-4xl sm:text-5xl lg:text-6xl mb-6 leading-tight">
+            <h1 className="font-display font-bold text-3xl md:text-5xl lg:text-7xl mb-6 leading-tight">
               Powering Sustainable Energy Through <span className="text-accent">Waste Transformation</span>
             </h1>
             <p className="text-sm sm:text-base text-white/80 mb-8 max-w-lg leading-relaxed">
@@ -114,13 +114,13 @@ export default function Home({ onPageChange }: HomeProps) {
             <div className="flex flex-wrap gap-4 mb-12">
               <button
                 onClick={() => onPageChange('contact')}
-                className="bg-primary hover:bg-primary-light text-white px-8 py-4 rounded-full font-semibold transition-all shadow-xl shadow-black/20"
+                className="bg-primary hover:bg-primary-light text-white px-8 py-4 rounded-full font-semibold transition-all shadow-xl shadow-black/20 w-full sm:w-auto"
               >
                 Partner With Us
               </button>
               <button
                 onClick={() => onPageChange('products')}
-                className="bg-white/10 backdrop-blur-md border border-white/20 hover:bg-white/20 text-white px-8 py-4 rounded-full font-semibold transition-all"
+                className="bg-white/10 backdrop-blur-md border border-white/20 hover:bg-white/20 text-white px-8 py-4 rounded-full font-semibold transition-all w-full sm:w-auto"
               >
                 Explore Services
               </button>
@@ -143,7 +143,7 @@ export default function Home({ onPageChange }: HomeProps) {
 
       {/* Metrics Section */}
       <section className="py-20 bg-white relative">
-        <div className="max-w-7xl mx-auto px-6 grid grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="max-w-7xl mx-auto px-4 md:px-8 lg:px-16 grid grid-cols-2 lg:grid-cols-4 gap-8">
           {[
             { target: 450, suffix: 'k+', label: 'Waste Processed (t)' },
             { target: 32, suffix: '%', label: 'Carbon Reduced' },
@@ -167,7 +167,7 @@ export default function Home({ onPageChange }: HomeProps) {
 
       {/* Services Section Preview */}
       <section className="py-24 bg-teal-50/20 relative overflow-hidden">
-        <div className="max-w-7xl mx-auto px-6">
+        <div className="max-w-7xl mx-auto px-4 md:px-8 lg:px-16">
           <div className="text-center max-w-3xl mx-auto mb-20">
             <h2 className="font-display font-bold text-3xl sm:text-4xl lg:text-5xl text-primary mb-6">
               Comprehensive Energy Solutions
@@ -188,14 +188,14 @@ export default function Home({ onPageChange }: HomeProps) {
               {
                 icon: <Recycle className="w-6 h-6" />,
                 title: 'Biomass Fuel Supply',
-                desc: 'Reliable sourcing and distribution of high-grade biomass fuels for industrial boilers and power plants.',
+                desc: 'Reliable sourcing and sustainable distribution of high-grade biomass fuels supporting industries, rural communities and cleaner energy ecosystems.',
                 sectionId: 'biomass-fuel-supply',
               },
               {
                 icon: <Factory className="w-6 h-6" />,
-                title: 'RDF Processing',
+                title: 'RDF Processing & Supply',
                 desc: 'Refuse Derived Fuel production systems that convert municipal and industrial waste into high-calorific energy sources.',
-                sectionId: 'rdf-processing-unit',
+                sectionId: 'rdf-processing-supply',
               },
               {
                 icon: <Droplets className="w-6 h-6" />,
@@ -276,7 +276,7 @@ export default function Home({ onPageChange }: HomeProps) {
           </svg>
         </div>
 
-        <div className="max-w-7xl mx-auto px-6 relative z-10">
+        <div className="max-w-7xl mx-auto px-4 md:px-8 lg:px-16 relative z-10">
           <div className="text-center mb-24 max-w-2xl mx-auto">
             <span className="inline-block bg-[#03818F]/20 border border-[#00A8C6]/30 px-4 py-1.5 rounded-full text-[#00A8C6] font-semibold text-xs tracking-wider uppercase mb-4">
               Decarbonization Workflow
@@ -319,7 +319,7 @@ export default function Home({ onPageChange }: HomeProps) {
             </div>
 
             {/* Staggered Grid Container */}
-            <motion.div 
+            <motion.div
               variants={{
                 hidden: { opacity: 0 },
                 visible: {
@@ -330,11 +330,11 @@ export default function Home({ onPageChange }: HomeProps) {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, margin: '-100px' }}
-              className="grid grid-cols-1 md:grid-cols-5 gap-8 lg:gap-12 relative z-10"
+              className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8 lg:gap-12 relative z-10"
             >
               {circularJourney.map((step, i) => (
-                <motion.div 
-                  key={i} 
+                <motion.div
+                  key={i}
                   variants={{
                     hidden: { opacity: 0, y: 35 },
                     visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: "easeOut" } }
@@ -344,10 +344,10 @@ export default function Home({ onPageChange }: HomeProps) {
                   <div className="w-24 h-24 bg-white/5 backdrop-blur-md border border-white/10 rounded-full flex items-center justify-center mb-6 shadow-md relative transition-all duration-500 group-hover:scale-110 group-hover:border-[#00A8C6]/50 group-hover:shadow-[0_0_25px_rgba(0,168,198,0.3)]">
                     {/* Pulsing ring for active nodes */}
                     <div className="absolute inset-0 bg-[#00A8C6]/5 rounded-full animate-pulse pointer-events-none scale-105" />
-                    
+
                     {/* Glowing highlight */}
                     <div className="absolute inset-0 bg-[#00A8C6]/5 rounded-full scale-110 blur-xl opacity-0 group-hover:opacity-100 transition-opacity" />
-                    
+
                     <div className="text-[#00A8C6] relative z-10 transition-transform duration-500 group-hover:scale-110">
                       {step.icon}
                     </div>
@@ -377,7 +377,7 @@ export default function Home({ onPageChange }: HomeProps) {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="w-full"
         >
-          <div className="max-w-7xl mx-auto px-6 mb-16 text-center">
+          <div className="max-w-7xl mx-auto px-4 md:px-8 lg:px-16 mb-16 text-center">
             <h2 className="font-display font-bold text-3xl sm:text-4xl text-primary">
               Client Success Stories
             </h2>
@@ -387,53 +387,69 @@ export default function Home({ onPageChange }: HomeProps) {
           </div>
 
           {/* Infinite Scroll Testimonials Container */}
-          <div className="w-full overflow-hidden relative py-8 before:absolute before:left-0 before:top-0 before:bottom-0 before:w-20 sm:before:w-44 before:bg-gradient-to-r before:from-white before:to-transparent before:z-10 after:absolute after:right-0 after:top-0 after:bottom-0 after:w-20 sm:after:w-44 after:bg-gradient-to-l after:from-white after:to-transparent after:z-10">
-            <div className="flex w-[200%] gap-8 animate-scroll hover:[animation-play-state:paused] whitespace-nowrap">
+          <div className="w-full overflow-hidden relative py-8 before:absolute before:left-0 before:top-0 before:bottom-0 before:w-16 sm:before:w-32 before:bg-gradient-to-r before:from-white before:to-transparent before:z-10 after:absolute after:right-0 after:top-0 after:bottom-0 after:w-16 sm:after:w-32 after:bg-gradient-to-l after:from-white after:to-transparent after:z-10">
+            <div className="flex w-max animate-scroll hover:[animation-play-state:paused] whitespace-nowrap">
               {[1, 2].map((loop) => (
-                <div key={loop} className="flex gap-8 w-1/2 justify-around">
+                <div key={loop} className="flex gap-6 md:gap-8 shrink-0 pr-6 md:pr-8">
                   {[
                     {
-                      quote: "Geoclaim's biogas plant installation transformed our organic waste management. We now power 100% of our operations cleanly.",
-                      author: "James Wilson",
-                      role: "Operations Director, EcoSystems",
-                      initial: "J"
+                      quote: "Geoclaim helped us establish a more structured waste management and resource utilization process for our local community. Their practical approach has supported cleaner surroundings and better waste handling practices.",
+                      author: "Grampanchayat Dhanla",
+                      role: "Rural Waste Management & Sustainability Initiative",
+                      initial: "G",
+                      highlights: ['Rural waste stream optimization', 'Community sustainability support', 'Cleaner local environmental impact']
                     },
                     {
-                      quote: "Switching to Geoclaim's RDF fuels helped our cement manufacturing unit bypass coal consumption completely, securing our ESG metrics.",
-                      author: "Sarah Chen",
-                      role: "Chief Sustainability Officer, MetaGrid",
-                      initial: "S"
+                      quote: "By working with Geoclaim, we were able to explore cleaner fuel alternatives and improve operational sustainability. Their solutions helped us move toward a more efficient and environmentally responsible process.",
+                      author: "Graywal Industries",
+                      role: "Industrial Fuel & Sustainable Energy Solutions",
+                      initial: "G",
+                      highlights: ['Biomass fuel support', 'Reduced dependency on conventional fuel', 'Improved sustainability initiatives']
                     },
                     {
-                      quote: "The decentralized paddy straw collection network has not only stopped stubble burning in our region but also provided a stable biomass supply.",
-                      author: "Mark Roberts",
-                      role: "Plant Manager, IndusCorp",
-                      initial: "M"
+                      quote: "Geoclaim provided valuable guidance and support throughout our sustainability planning journey. Their team understood operational requirements and offered practical solutions tailored to our needs.",
+                      author: "Debarth Bannarjee",
+                      role: "Strategic Sustainability Consultation",
+                      initial: "D",
+                      highlights: ['Sustainability consultation', 'Waste-to-energy planning', 'Customized implementation support']
                     },
                     {
-                      quote: "Their EHS consulting and ISO 14001 compliance audit tools ensured our energy hubs cleared state pollution audits in record time.",
-                      author: "Priyah Sharma",
-                      role: "Director, Deccan Bio-CNG Ventures",
-                      initial: "P"
+                      quote: "Working with Geoclaim strengthened our biomass procurement and supply operations. Their collaboration helped create a more reliable and efficient supply ecosystem.",
+                      author: "Saoner Biomass Supplier",
+                      role: "Biomass Procurement & Supply Chain Support",
+                      initial: "S",
+                      highlights: ['Biomass procurement partnership', 'Rural sourcing network support', 'Streamlined supply chain operations']
                     }
                   ].map((t, idx) => (
                     <div
                       key={idx}
-                      className="bg-white/90 border border-teal-100/50 p-8 rounded-2xl w-[420px] inline-block whitespace-normal shrink-0 shadow-sm hover:shadow-[0_12px_30px_rgba(0,188,212,0.18)] hover:border-accent/40 hover:scale-[1.03] transition-all duration-500 cursor-pointer"
+                      className="bg-white/90 border border-teal-100/50 p-6 md:p-8 rounded-2xl w-[280px] sm:w-[320px] md:w-[380px] lg:w-[420px] inline-flex flex-col whitespace-normal shrink-0 shadow-sm hover:shadow-[0_12px_30px_rgba(0,188,212,0.18)] hover:border-accent/40 hover:scale-[1.03] transition-all duration-500 cursor-pointer h-full"
                     >
-                      <div className="flex gap-1 text-accent mb-4">
-                        {[...Array(5)].map((_, i) => (
-                          <span key={i} className="text-sm font-semibold">★</span>
-                        ))}
+                      <div className="flex-grow">
+                        <div className="flex gap-1 text-accent mb-4">
+                          {[...Array(5)].map((_, i) => (
+                            <span key={i} className="text-sm font-semibold">★</span>
+                          ))}
+                        </div>
+                        <p className="text-gray-700 italic text-sm mb-6 leading-relaxed">"{t.quote}"</p>
+                        {t.highlights && (
+                          <ul className="mb-6 space-y-1.5">
+                            {t.highlights.map((hl, i) => (
+                              <li key={i} className="flex items-start gap-2 text-xs text-gray-600 font-medium">
+                                <span className="text-primary mt-0.5">•</span>
+                                <span>{hl}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        )}
                       </div>
-                      <p className="text-gray-700 italic text-sm mb-6 leading-relaxed">"{t.quote}"</p>
-                      <div className="flex items-center gap-4">
-                        <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center font-bold text-primary text-xs">
+                      <div className="flex items-center gap-4 mt-auto pt-4 border-t border-teal-50">
+                        <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center font-bold text-primary text-xs shrink-0">
                           {t.initial}
                         </div>
                         <div>
                           <div className="font-display font-bold text-xs text-primary">{t.author}</div>
-                          <div className="text-[10px] text-gray-500">{t.role}</div>
+                          <div className="text-[10px] text-gray-500 mt-0.5">{t.role}</div>
                         </div>
                       </div>
                     </div>
@@ -446,7 +462,7 @@ export default function Home({ onPageChange }: HomeProps) {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 max-w-7xl mx-auto px-6">
+      <section className="py-20 max-w-7xl mx-auto px-4 md:px-8 lg:px-16">
         <div className="bg-gradient-to-br from-primary to-[#034152] rounded-[32px] p-12 sm:p-20 text-center relative overflow-hidden shadow-2xl">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,188,212,0.15)_0%,transparent_70%)] pointer-events-none" />
           <h2 className="font-display font-bold text-3xl sm:text-4xl text-white mb-6 leading-tight">
@@ -457,7 +473,7 @@ export default function Home({ onPageChange }: HomeProps) {
           </p>
           <button
             onClick={() => onPageChange('contact')}
-            className="bg-accent hover:bg-accent/90 text-primary px-10 py-4 rounded-full font-bold transition-all shadow-lg hover:-translate-y-0.5"
+            className="bg-accent hover:bg-accent/90 text-primary px-10 py-4 rounded-full font-bold transition-all shadow-lg hover:-translate-y-0.5 w-full sm:w-auto"
           >
             Get In Touch
           </button>

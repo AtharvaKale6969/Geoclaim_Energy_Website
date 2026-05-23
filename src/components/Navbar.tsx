@@ -34,7 +34,7 @@ export default function Navbar({ currentPage, onPageChange }: NavbarProps) {
       label: 'Products & Services',
       dropdownItems: [
         { label: 'Biomass Fuel Supply', sectionId: 'biomass' },
-        { label: 'RDF Processing Unit', sectionId: 'rdf' },
+        { label: 'RDF Processing & Supply', sectionId: 'rdf-processing-supply' },
         { label: 'Biogas Plant Establishment', sectionId: 'biogas' },
         { label: 'Plant Machinery Supply', sectionId: 'machinery' },
       ],
@@ -55,14 +55,15 @@ export default function Navbar({ currentPage, onPageChange }: NavbarProps) {
   ];
 
   return (
-    <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
-          ? 'bg-white/85 backdrop-blur-md shadow-md py-3 border-b border-teal-100/50'
-          : 'bg-white/70 backdrop-blur-sm py-5'
-      }`}
-    >
-      <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
+    <>
+      <nav
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+          isScrolled
+            ? 'bg-white/85 backdrop-blur-md shadow-md py-3 border-b border-teal-100/50'
+            : 'bg-white/70 backdrop-blur-sm py-5'
+        }`}
+      >
+      <div className="max-w-7xl mx-auto px-4 md:px-8 lg:px-16 flex justify-between items-center">
         {/* Logo */}
         <motion.div 
           className="flex items-center gap-3 cursor-pointer select-none group" 
@@ -76,13 +77,13 @@ export default function Navbar({ currentPage, onPageChange }: NavbarProps) {
             alt="Logo" 
             className="h-10 md:h-11 w-auto object-contain transition-transform duration-300 group-hover:scale-105" 
           />
-          <span className="font-display font-bold text-xl text-primary tracking-tight hidden sm:block bg-gradient-to-r from-[#041523] via-[#034152] to-[#03818F] bg-clip-text text-transparent group-hover:text-[#00A8C6] transition-colors duration-300">
+          <span className="font-display font-bold text-xl text-primary tracking-tight bg-gradient-to-r from-[#041523] via-[#034152] to-[#03818F] bg-clip-text text-transparent group-hover:text-[#00A8C6] transition-colors duration-300">
             Geoclaim Energy
           </span>
         </motion.div>
 
         {/* Desktop Nav Links */}
-        <div className="hidden xl:flex items-center gap-8">
+        <div className="hidden xl:flex flex-1 items-center justify-center flex-nowrap whitespace-nowrap gap-4 md:gap-6 lg:gap-8 xl:gap-10 px-4">
           {navLinks.map((link) => {
             if (link.dropdownItems) {
               return (
@@ -103,7 +104,7 @@ export default function Navbar({ currentPage, onPageChange }: NavbarProps) {
                   </button>
                   {/* Dropdown Menu */}
                   <div
-                    className={`absolute left-0 mt-2 w-64 bg-white rounded-2xl shadow-xl border border-teal-50/50 p-2 transition-all duration-300 origin-top-left ${
+                    className={`absolute left-0 mt-2 w-64 bg-white/95 backdrop-blur-md rounded-2xl shadow-xl border border-teal-50/50 p-2 flex flex-col items-start gap-1 transition-all duration-300 origin-top-left ${
                       activeDropdown === link.id
                         ? 'opacity-100 scale-100 pointer-events-auto'
                         : 'opacity-0 scale-95 pointer-events-none'
@@ -155,64 +156,83 @@ export default function Navbar({ currentPage, onPageChange }: NavbarProps) {
             {isMobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </button>
         </div>
-      </div>
+        </div>
+      </nav>
 
       {/* Mobile Drawer Overlay */}
-      {isMobileMenuOpen && (
-        <div
-          className="fixed inset-0 bg-[#041523]/60 backdrop-blur-sm z-40 xl:hidden"
-          onClick={() => setIsMobileMenuOpen(false)}
-        />
-      )}
+      <div
+        className={`fixed inset-0 bg-[#041523]/60 backdrop-blur-sm z-40 xl:hidden transition-opacity duration-300 ${
+          isMobileMenuOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'
+        }`}
+        onClick={() => setIsMobileMenuOpen(false)}
+      />
 
       {/* Mobile Drawer Menu */}
       <div
-        className={`fixed right-0 top-0 bottom-0 w-[80%] max-w-sm bg-[#041523] p-8 flex flex-col gap-8 border-l border-white/10 z-50 xl:hidden transition-transform duration-300 ${
+        className={`fixed right-0 top-0 bottom-0 w-[85%] max-w-sm bg-white/95 backdrop-blur-xl p-8 flex flex-col gap-6 shadow-2xl z-50 xl:hidden transition-transform duration-300 ${
           isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
         }`}
       >
-        <button className="self-end p-2 text-white/80 hover:text-white" onClick={() => setIsMobileMenuOpen(false)}>
-          <X className="w-6 h-6" />
-        </button>
+        <div className="flex justify-between items-center pb-6 border-b border-teal-100/50">
+          <span className="font-display font-bold text-lg text-primary tracking-tight bg-gradient-to-r from-[#041523] via-[#034152] to-[#03818F] bg-clip-text text-transparent">
+            Navigation
+          </span>
+          <button 
+            className="p-2 text-gray-500 hover:text-primary transition-colors bg-teal-50/50 rounded-full" 
+            onClick={() => setIsMobileMenuOpen(false)}
+          >
+            <X className="w-5 h-5" />
+          </button>
+        </div>
 
-        <nav className="flex flex-col gap-5 overflow-y-auto pr-2">
+        <nav className="flex flex-col gap-6 overflow-y-auto pr-2">
           {navLinks.map((link) => (
-            <div key={link.id} className="flex flex-col gap-2">
-              <button
-                onClick={() => {
-                  if (!link.dropdownItems) {
+            <div key={link.id} className="flex flex-col">
+              <div className="flex items-center justify-between">
+                <button
+                  onClick={() => {
                     onPageChange(link.id);
                     setIsMobileMenuOpen(false);
-                  } else {
-                    setActiveDropdown(activeDropdown === link.id ? null : link.id);
-                  }
-                }}
-                className={`text-left text-lg font-bold text-white flex items-center justify-between ${
-                  currentPage === link.id ? 'text-accent' : ''
+                  }}
+                  className={`text-left text-base sm:text-lg font-bold flex-1 py-1 transition-colors ${
+                    currentPage === link.id ? 'text-accent' : 'text-primary'
+                  }`}
+                >
+                  {link.label}
+                </button>
+                {link.dropdownItems && (
+                  <button
+                    onClick={() => setActiveDropdown(activeDropdown === link.id ? null : link.id)}
+                    className="p-2 -mr-2 text-gray-400 hover:text-primary transition-colors"
+                  >
+                    <ChevronDown
+                      className={`w-5 h-5 transition-transform duration-300 ${
+                        activeDropdown === link.id ? 'rotate-180 text-primary' : ''
+                      }`}
+                    />
+                  </button>
+                )}
+              </div>
+
+              {/* Mobile Dropdown Options */}
+              <div
+                className={`overflow-hidden transition-all duration-300 ease-in-out ${
+                  activeDropdown === link.id ? 'max-h-64 opacity-100 mt-2' : 'max-h-0 opacity-0'
                 }`}
               >
-                {link.label}
-                {link.dropdownItems && (
-                  <ChevronDown
-                    className={`w-5 h-5 transition-transform ${
-                      activeDropdown === link.id ? 'rotate-180' : ''
-                    }`}
-                  />
-                )}
-              </button>
-              {link.dropdownItems && activeDropdown === link.id && (
-                <div className="flex flex-col gap-3 pl-4 border-l border-white/10 mt-2">
-                  {link.dropdownItems.map((item) => (
+                <div className="flex flex-col gap-4 pl-4 border-l-2 border-teal-100 ml-2 py-2">
+                  {link.dropdownItems?.map((item) => (
                     <button
                       key={item.label}
                       onClick={() => handleDropdownItemClick(link.id, item.sectionId)}
-                      className="text-left text-sm text-white/70 hover:text-white transition-colors"
+                      className="text-left text-sm font-semibold text-gray-600 hover:text-primary transition-colors flex items-center gap-2"
                     >
+                      <span className="w-1.5 h-1.5 rounded-full bg-teal-200" />
                       {item.label}
                     </button>
                   ))}
                 </div>
-              )}
+              </div>
             </div>
           ))}
         </nav>
@@ -222,11 +242,11 @@ export default function Navbar({ currentPage, onPageChange }: NavbarProps) {
             onPageChange('contact');
             setIsMobileMenuOpen(false);
           }}
-          className="mt-auto w-full bg-gradient-to-r from-primary to-accent py-4 rounded-full font-semibold text-white shadow-lg text-center"
+          className="mt-auto w-full bg-gradient-to-r from-primary to-accent py-4 rounded-xl font-bold text-white shadow-lg text-center text-sm uppercase tracking-wider hover:shadow-xl hover:-translate-y-0.5 transition-all"
         >
           Get In Touch
         </button>
       </div>
-    </nav>
+    </>
   );
 }

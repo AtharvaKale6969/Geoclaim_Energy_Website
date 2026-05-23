@@ -26,11 +26,11 @@ export default function Footer({ onPageChange }: FooterProps) {
   };
 
   return (
-    <footer className="bg-[#041523] text-white pt-20 pb-10 px-6 border-t border-white/5 relative overflow-hidden">
+    <footer className="bg-[#041523] text-white pt-20 pb-10 px-4 md:px-8 lg:px-16 border-t border-white/5 relative overflow-hidden">
       {/* Background radial glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-[radial-gradient(circle_at_center,rgba(3,129,143,0.05)_0%,transparent_70%)] pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 relative z-10">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 relative z-10">
         {/* Col 1: About & Socials */}
         <div className="space-y-6">
           <span className="font-display font-bold text-2xl text-accent block">Geoclaim Energy</span>
@@ -59,8 +59,8 @@ export default function Footer({ onPageChange }: FooterProps) {
               </button>
             </li>
             <li>
-              <button onClick={() => onPageChange('products', 'rdf-processing-unit')} className="hover:text-white transition-colors">
-                RDF Processing Unit
+              <button onClick={() => onPageChange('products', 'rdf-processing-supply')} className="hover:text-white transition-colors">
+                RDF Processing & Supply
               </button>
             </li>
             <li>
@@ -136,7 +136,7 @@ export default function Footer({ onPageChange }: FooterProps) {
       {/* Copyright Bar */}
       <div className="max-w-7xl mx-auto mt-16 pt-8 border-t border-white/5 flex flex-col sm:flex-row justify-between items-center gap-4 text-white/40 text-xs">
         <p>© 2026 Geoclaim Energy Solutions Pvt. Ltd. All Rights Reserved.</p>
-        <div className="flex gap-6">
+        <div className="flex flex-wrap justify-center gap-4 sm:gap-6">
           <button className="hover:text-white transition-colors">Privacy Policy</button>
           <button className="hover:text-white transition-colors">Terms of Service</button>
           <button className="hover:text-white transition-colors">Cookie Settings</button>
