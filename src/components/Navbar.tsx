@@ -190,9 +190,14 @@ export default function Navbar({ currentPage, onPageChange }: NavbarProps) {
             <div key={link.id} className="flex flex-col">
               <div className="flex items-center justify-between">
                 <button
-                  onClick={() => {
-                    onPageChange(link.id);
-                    setIsMobileMenuOpen(false);
+                  onClick={(e) => {
+                    if (link.dropdownItems) {
+                      e.preventDefault();
+                      setActiveDropdown(activeDropdown === link.id ? null : link.id);
+                    } else {
+                      onPageChange(link.id);
+                      setIsMobileMenuOpen(false);
+                    }
                   }}
                   className={`text-left text-base sm:text-lg font-bold flex-1 py-1 transition-colors ${
                     currentPage === link.id ? 'text-accent' : 'text-primary'
@@ -202,7 +207,10 @@ export default function Navbar({ currentPage, onPageChange }: NavbarProps) {
                 </button>
                 {link.dropdownItems && (
                   <button
-                    onClick={() => setActiveDropdown(activeDropdown === link.id ? null : link.id)}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      setActiveDropdown(activeDropdown === link.id ? null : link.id);
+                    }}
                     className="p-2 -mr-2 text-gray-400 hover:text-primary transition-colors"
                   >
                     <ChevronDown
