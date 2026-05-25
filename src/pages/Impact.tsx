@@ -557,7 +557,7 @@ export default function Impact({ sectionId, onPageChange }: ImpactProps) {
               transition={{ duration: 0.6, delay: 0.3 }}
               className="text-gray-300 text-sm sm:text-base md:text-lg max-w-2xl leading-relaxed font-light"
             >
-              Delivering measurable environmental outcomes through systematic operational excellence, advanced biomass processing, and transparent ESG validation.
+              Delivering measurable environmental outcomes through systematic operational excellence, advanced biomass, biogas & RDF processing, and transparent ESG validation.
             </motion.p>
 
             {/* Staggered CTA Buttons */}
@@ -578,12 +578,6 @@ export default function Impact({ sectionId, onPageChange }: ImpactProps) {
               >
                 Explore Metrics
                 <ArrowDown className="w-4 h-4 group-hover:translate-y-1 transition-transform" />
-              </button>
-              <button
-                onClick={() => onPageChange('contact')}
-                className="bg-transparent hover:bg-white/10 text-white border border-white/20 hover:border-white/40 px-6 py-3 rounded-full font-bold text-xs sm:text-sm uppercase tracking-wider transition-all cursor-pointer w-full sm:w-auto text-center"
-              >
-                Request Audit Report
               </button>
             </motion.div>
           </div>

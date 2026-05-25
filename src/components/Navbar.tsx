@@ -20,8 +20,12 @@ export default function Navbar({ currentPage, onPageChange }: NavbarProps) {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const handleDropdownItemClick = (page: string, sectionId: string) => {
-    onPageChange(page, sectionId);
+  const handleDropdownItemClick = (page: string, sectionId?: string, pageId?: string) => {
+    if (pageId) {
+      onPageChange(pageId);
+    } else {
+      onPageChange(page, sectionId);
+    }
     setActiveDropdown(null);
     setIsMobileMenuOpen(false);
   };
@@ -33,10 +37,10 @@ export default function Navbar({ currentPage, onPageChange }: NavbarProps) {
       id: 'products',
       label: 'Products & Services',
       dropdownItems: [
-        { label: 'Biomass Fuel Supply', sectionId: 'biomass' },
-        { label: 'RDF Processing & Supply', sectionId: 'rdf-processing-supply' },
-        { label: 'Biogas Plant Establishment', sectionId: 'biogas' },
-        { label: 'Plant Machinery Supply', sectionId: 'machinery' },
+        { label: 'Biomass Fuel Supply', pageId: 'services/biomass-fuel-supply' },
+        { label: 'RDF Processing & Supply', pageId: 'services/rdf-processing-supply' },
+        { label: 'Biogas Plant Establishment', pageId: 'services/biogas-plant-establishment' },
+        { label: 'Plant Machinery Supply & Consulting', pageId: 'services/plant-machinery-consulting' },
       ],
     },
     {
@@ -113,7 +117,7 @@ export default function Navbar({ currentPage, onPageChange }: NavbarProps) {
                     {link.dropdownItems.map((item) => (
                       <button
                         key={item.label}
-                        onClick={() => handleDropdownItemClick(link.id, item.sectionId)}
+                        onClick={() => handleDropdownItemClick(link.id, item.sectionId, item.pageId)}
                         className="w-full text-left px-4 py-3 text-xs font-semibold text-gray-700 hover:text-primary hover:bg-teal-50/50 rounded-xl transition-all"
                       >
                         {item.label}
@@ -232,7 +236,7 @@ export default function Navbar({ currentPage, onPageChange }: NavbarProps) {
                   {link.dropdownItems?.map((item) => (
                     <button
                       key={item.label}
-                      onClick={() => handleDropdownItemClick(link.id, item.sectionId)}
+                      onClick={() => handleDropdownItemClick(link.id, item.sectionId, item.pageId)}
                       className="text-left text-sm font-semibold text-gray-600 hover:text-primary transition-colors flex items-center gap-2"
                     >
                       <span className="w-1.5 h-1.5 rounded-full bg-teal-200" />

@@ -35,7 +35,7 @@ export default function Footer({ onPageChange }: FooterProps) {
         <div className="space-y-6">
           <span className="font-display font-bold text-2xl text-accent block">Geoclaim Energy</span>
           <p className="text-white/60 text-sm leading-relaxed max-w-sm">
-            Pioneering high-capacity industrial waste-to-energy conversion systems for a carbon-neutral future. Join us in powering a circular future.
+            Pioneering high-capacity businesses waste-to-energy conversion systems for a carbon-neutral future. Join us in powering a circular future.
           </p>
           <div className="flex gap-4">
             {['globe', 'mail'].map((icon) => (
@@ -54,22 +54,22 @@ export default function Footer({ onPageChange }: FooterProps) {
           <h5 className="font-display font-semibold text-sm uppercase tracking-widest text-accent mb-6">Solutions</h5>
           <ul className="space-y-3 text-sm text-white/60">
             <li>
-              <button onClick={() => onPageChange('products', 'biomass-fuel-supply')} className="hover:text-white transition-colors">
+              <button onClick={() => onPageChange('services/biomass-fuel-supply')} className="hover:text-white transition-colors">
                 Biomass Fuel Supply
               </button>
             </li>
             <li>
-              <button onClick={() => onPageChange('products', 'rdf-processing-supply')} className="hover:text-white transition-colors">
+              <button onClick={() => onPageChange('services/rdf-processing-supply')} className="hover:text-white transition-colors">
                 RDF Processing & Supply
               </button>
             </li>
             <li>
-              <button onClick={() => onPageChange('products', 'biogas-plant-establishment')} className="hover:text-white transition-colors">
+              <button onClick={() => onPageChange('services/biogas-plant-establishment')} className="hover:text-white transition-colors">
                 Biogas Plant Establishment
               </button>
             </li>
             <li>
-              <button onClick={() => onPageChange('products', 'plant-machinery-supply-consulting')} className="hover:text-white transition-colors">
+              <button onClick={() => onPageChange('services/plant-machinery-consulting')} className="hover:text-white transition-colors">
                 Plant Machinery Supply & Consulting
               </button>
             </li>

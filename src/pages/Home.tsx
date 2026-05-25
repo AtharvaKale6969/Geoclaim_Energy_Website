@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import heroImg from "../assets/Image_Hero.png";
 import { motion, useInView } from 'framer-motion';
 import { ArrowRight, Recycle, Flame, Factory, ShieldCheck, Settings, Droplets } from 'lucide-react';
+import ClientsAndPartners from '../components/home/ClientsAndPartners';
 
 interface HomeProps {
   onPageChange: (page: string, sectionId?: string) => void;
@@ -70,7 +71,7 @@ export default function Home({ onPageChange }: HomeProps) {
     { step: '01', title: 'Site Assessment', desc: 'Conducting site evaluation, waste audits, feasibility studies and requirement estimation before solution planning.', icon: <Recycle className="w-8 h-8" /> },
     { step: '02', title: 'Waste Source Alignment', desc: 'Identifying, aligning and validating suitable waste streams and feedstock sources for optimal processing and energy recovery.', icon: <Settings className="w-8 h-8" /> },
     { step: '03', title: 'Processing', desc: 'Conversion into RDF, biomass, or biogas precursors.', icon: <Factory className="w-8 h-8" /> },
-    { step: '04', title: 'Energy Conversion', desc: 'Thermal and chemical recovery into grid-ready power.', icon: <Flame className="w-8 h-8" /> },
+    { step: '04', title: 'Energy Conversion', desc: 'Thermal, fuel & chemical recovery into grid-ready power.', icon: <Flame className="w-8 h-8" /> },
     { step: '05', title: 'Sustainability', desc: 'Reduced carbon footprint and circular economy metrics.', icon: <ShieldCheck className="w-8 h-8" /> },
   ];
 
@@ -173,7 +174,7 @@ export default function Home({ onPageChange }: HomeProps) {
               Comprehensive Energy Solutions
             </h2>
             <p className="text-gray-600 leading-relaxed text-sm sm:text-base">
-              Bridging the gap between industrial output and renewable sustainability through cutting-edge waste-to-energy technologies.
+              Bridging the gap between businesses waste output and renewable sustainability through cutting-edge waste-to-energy technologies.
             </p>
           </div>
 
@@ -188,7 +189,7 @@ export default function Home({ onPageChange }: HomeProps) {
               {
                 icon: <Recycle className="w-6 h-6" />,
                 title: 'Biomass Fuel Supply',
-                desc: 'Reliable sourcing and sustainable distribution of high-grade biomass fuels supporting industries, rural communities and cleaner energy ecosystems.',
+                desc: 'Reliable sourcing and sustainable distribution of high-grade biomass fuels supporting industries, Government bodies & commercials and cleaner energy ecosystems.',
                 sectionId: 'biomass-fuel-supply',
               },
               {
@@ -285,7 +286,7 @@ export default function Home({ onPageChange }: HomeProps) {
               The Circular Journey
             </h2>
             <p className="text-gray-300 text-sm sm:text-base leading-relaxed">
-              How we transform industrial and community waste streams into clean, value-driven energy products.
+              How we transform businesses waste streams into clean, value-driven energy products.
             </p>
           </div>
 
@@ -461,24 +462,7 @@ export default function Home({ onPageChange }: HomeProps) {
         </motion.div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 max-w-7xl mx-auto px-4 md:px-8 lg:px-16">
-        <div className="bg-gradient-to-br from-primary to-[#034152] rounded-[32px] p-12 sm:p-20 text-center relative overflow-hidden shadow-2xl">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,188,212,0.15)_0%,transparent_70%)] pointer-events-none" />
-          <h2 className="font-display font-bold text-3xl sm:text-4xl text-white mb-6 leading-tight">
-            Ready to Power the Future?
-          </h2>
-          <p className="text-white/80 text-sm sm:text-base mb-10 max-w-xl mx-auto leading-relaxed">
-            Join our journey toward a zero-waste industrial era. Contact us to learn about partnership opportunities.
-          </p>
-          <button
-            onClick={() => onPageChange('contact')}
-            className="bg-accent hover:bg-accent/90 text-primary px-10 py-4 rounded-full font-bold transition-all shadow-lg hover:-translate-y-0.5 w-full sm:w-auto"
-          >
-            Get In Touch
-          </button>
-        </div>
-      </section>
+      <ClientsAndPartners />
     </div>
   );
 }

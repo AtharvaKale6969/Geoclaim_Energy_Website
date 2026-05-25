@@ -41,10 +41,10 @@ export default function About({ onPageChange }: AboutProps) {
             </span>
             <h1 className="font-display font-bold text-3xl md:text-5xl lg:text-7xl mb-6 leading-tight">
               Pioneering the <br />
-              <span className="text-accent">Eco-Industrial</span> Frontier
+              <span className="text-accent">Eco-Business</span> Frontier
             </h1>
             <p className="text-sm sm:text-base text-white/80 max-w-xl mb-8 leading-relaxed">
-              Revolutionizing global energy through advanced circular economy technologies and sustainable industrial infrastructure.
+              Revolutionizing global energy through advanced circular economy technologies and sustainable business infrastructure.
             </p>
             <div className="flex gap-4">
               <button
@@ -64,13 +64,13 @@ export default function About({ onPageChange }: AboutProps) {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-start">
             <div>
               <h2 className="font-display font-bold text-3xl sm:text-4xl text-primary mb-6">
-                Redefining Industrial Power
+                Redefining Business Power
               </h2>
               <div className="w-24 h-1.5 bg-gradient-to-r from-primary to-accent rounded-full mb-8"></div>
             </div>
             <div className="space-y-6 text-gray-600 text-sm sm:text-base leading-relaxed">
               <p>
-                Geoclaim Energy Pvt. Ltd. is engaged in providing innovative and sustainable solutions in the field of renewable energy and waste management. The company aims to bridge the gap between waste generation and energy demand by converting organic and non-recyclable waste into usable fuels and resources.
+                Geoclaim Energy Pvt. Ltd. is Nagpur based waste to energy company who engaged in providing innovative and sustainable solutions in the field of renewable energy and waste management. The company aims to bridge the gap between waste generation and energy demand by converting organic and non-recyclable waste into usable fuels and resources.
               </p>
               <p>
                 By leveraging cutting-edge circular economy models, we transform industrial byproduct and urban waste into high-density energy solutions, closing the loop on manufacturing while powering the next generation of sustainable cities.
@@ -122,7 +122,7 @@ export default function About({ onPageChange }: AboutProps) {
 
                   
                   <p className="text-gray-600 text-sm sm:text-base leading-relaxed mb-4 font-light">
-          To create a cleaner and more sustainable future by helping industries and communities transform waste into meaningful resources. We are committed to reducing environmental impact through practical, eco-friendly solutions that support a greener tomorrow.
+          To create a cleaner and more sustainable future by helping businesses and communities transform waste into meaningful resources. We are committed to reducing environmental impact through practical, eco-friendly solutions that support a greener tomorrow.
         </p>
                 </div>
               </div>
@@ -132,7 +132,7 @@ export default function About({ onPageChange }: AboutProps) {
                 <div className="w-full h-[1px] bg-teal-100/50 mb-6" />
                 <ul className="space-y-4">
                   {[
-                    'Reduce waste and create cleaner environments',
+                    'Reduce waste and create cleaner environment.',
                     'Provide sustainable energy alternatives',
                     'Support environmental and community initiatives',
                     'Deliver practical and eco-friendly solutions',
@@ -180,7 +180,7 @@ export default function About({ onPageChange }: AboutProps) {
                   </div>
 
                   <p className="text-white/80 text-sm sm:text-base leading-relaxed mb-6 font-light">
-          To inspire a future where sustainability becomes a way of life and cleaner energy solutions create lasting impact for industries, communities and the environment.
+          To inspire a future where sustainability becomes a way of life and cleaner energy solutions create lasting impact for businesses, communities and the environment.
         </p>
                 </div>
               </div>
@@ -190,9 +190,9 @@ export default function About({ onPageChange }: AboutProps) {
                 <div className="w-full h-[1px] bg-white/10 mb-6" />
                 <ul className="space-y-4">
                   {[
-                      'Build a more sustainable future for industries',
-                      'Encourage smarter and cleaner energy practices',
-                      'Strengthen communities through meaningful impact',
+                      'Build a more sustainable future for businesses.',
+                      'Encourage smarter and cleaner energy practices.',
+                      'Strengthen communities through meaningful impact.',
                   ].map((item, idx) => (
                     <li key={idx} className="flex items-center gap-3 text-sm text-white/85">
                       <CheckCircle2 className="w-4 h-4 text-accent shrink-0" />
@@ -228,7 +228,7 @@ export default function About({ onPageChange }: AboutProps) {
             {[
               {
                 title: 'Sustainability',
-                desc: 'Beyond compliance; we aim for environmental restoration in every industrial energy cycle we engineer.',
+                desc: 'Beyond compliance; we aim for environmental restoration in every business energy cycle we engineer.',
                 icon: <Leaf className="w-6 h-6" />,
               },
               {
@@ -238,7 +238,7 @@ export default function About({ onPageChange }: AboutProps) {
               },
               {
                 title: 'Compliance',
-                desc: 'Rigorous adherence to global environmental safety standards ensures long-term industrial reliability.',
+                desc: 'Rigorous adherence to global environmental safety standards ensures long-term businesses reliability.',
                 icon: <ShieldCheck className="w-6 h-6" />,
               },
               {
@@ -288,7 +288,7 @@ export default function About({ onPageChange }: AboutProps) {
             </h2>
             <div className="w-24 h-1 bg-gradient-to-r from-[#03818F] to-[#00A8C6] mx-auto rounded-full mb-6" />
             <p className="text-gray-500 text-sm sm:text-base leading-relaxed font-light">
-              We translate climate targets into measurable regional impact, proving that ecological purity and industrial profitability are mutually reinforcing models.
+              We translate climate targets into measurable regional impact, proving that ecological purity and businesses profitability are mutually reinforcing models.
             </p>
           </div>
 
@@ -360,7 +360,7 @@ export default function About({ onPageChange }: AboutProps) {
                     Carbon Offset Excellence
                   </h4>
                   <p className="text-gray-600 text-xs sm:text-sm leading-relaxed font-light">
-                    We've offset the equivalent carbon footprint of a medium-sized European city through avoided landfill emissions.
+                    We've offset the equivalent carbon footprint of a medium-sized Indian city through avoided landfill emissions.
                   </p>
                 </div>
               </div>
@@ -414,7 +414,7 @@ export default function About({ onPageChange }: AboutProps) {
                     Renewable Yield
                   </h4>
                   <p className="text-gray-600 text-xs sm:text-sm leading-relaxed font-light">
-                    Providing stable, base-load renewable energy that outperforms traditional solar and wind in industrial consistency.
+                    Providing stable, base-load renewable energy that outperforms traditional solar and wind in business consistency.
                   </p>
                 </div>
               </div>

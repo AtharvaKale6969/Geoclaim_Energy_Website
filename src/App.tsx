@@ -9,6 +9,10 @@ import Impact from './pages/Impact';
 import Blog from './pages/Blog';
 import Careers from './pages/Careers';
 import Contact from './pages/Contact';
+import BiomassFuelSupply from './pages/services/BiomassFuelSupply';
+import RdfProcessingSupply from './pages/services/RdfProcessingSupply';
+import BiogasPlantEstablishment from './pages/services/BiogasPlantEstablishment';
+import PlantMachineryConsulting from './pages/services/PlantMachineryConsulting';
 
 export default function App() {
   const [currentPage, setCurrentPage] = useState('home');
@@ -20,6 +24,12 @@ export default function App() {
       const hash = window.location.hash.replace('#', '');
       if (!hash) {
         setCurrentPage('home');
+        setSectionId(undefined);
+        return;
+      }
+      
+      if (hash.startsWith('services/')) {
+        setCurrentPage(hash);
         setSectionId(undefined);
         return;
       }
@@ -70,6 +80,14 @@ export default function App() {
         return <Careers />;
       case 'contact':
         return <Contact />;
+      case 'services/biomass-fuel-supply':
+        return <BiomassFuelSupply onPageChange={handlePageChange} />;
+      case 'services/rdf-processing-supply':
+        return <RdfProcessingSupply onPageChange={handlePageChange} />;
+      case 'services/biogas-plant-establishment':
+        return <BiogasPlantEstablishment onPageChange={handlePageChange} />;
+      case 'services/plant-machinery-consulting':
+        return <PlantMachineryConsulting onPageChange={handlePageChange} />;
       default:
         return <Home onPageChange={handlePageChange} />;
     }
