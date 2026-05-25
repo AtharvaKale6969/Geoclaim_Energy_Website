@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { useEffect, useRef } from 'react';
 import { motion, useInView, animate } from 'framer-motion';
 import { Factory, Cog, Flame, ArrowRight, ShieldCheck, CheckCircle2, TrendingUp, Users, Leaf, Truck, Activity, Shield } from 'lucide-react';

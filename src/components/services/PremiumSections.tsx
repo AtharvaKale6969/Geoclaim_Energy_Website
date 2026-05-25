@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { motion, useInView, animate, AnimatePresence } from 'framer-motion';
-import { CheckCircle2, ArrowRight, Plus, Minus, ArrowDown, MapPin } from 'lucide-react';
+import { CheckCircle2, ArrowRight, Plus, ArrowDown, MapPin } from 'lucide-react';
 
 /* 1. Service Highlights Strip */
 export function ServiceHighlights({ highlights }: { highlights: { icon: React.ReactNode, title: string }[] }) {

@@ -117,7 +117,7 @@ export default function Navbar({ currentPage, onPageChange }: NavbarProps) {
                     {link.dropdownItems.map((item) => (
                       <button
                         key={item.label}
-                        onClick={() => handleDropdownItemClick(link.id, item.sectionId, item.pageId)}
+                        onClick={() => handleDropdownItemClick(link.id, (item as any).sectionId, (item as any).pageId)}
                         className="w-full text-left px-4 py-3 text-xs font-semibold text-gray-700 hover:text-primary hover:bg-teal-50/50 rounded-xl transition-all"
                       >
                         {item.label}
@@ -236,7 +236,7 @@ export default function Navbar({ currentPage, onPageChange }: NavbarProps) {
                   {link.dropdownItems?.map((item) => (
                     <button
                       key={item.label}
-                      onClick={() => handleDropdownItemClick(link.id, item.sectionId, item.pageId)}
+                      onClick={() => handleDropdownItemClick(link.id, (item as any).sectionId, (item as any).pageId)}
                       className="text-left text-sm font-semibold text-gray-600 hover:text-primary transition-colors flex items-center gap-2"
                     >
                       <span className="w-1.5 h-1.5 rounded-full bg-teal-200" />

@@ -358,7 +358,7 @@ function ChennaiMiniChart() {
   );
 }
 
-export default function Impact({ sectionId, onPageChange }: ImpactProps) {
+export default function Impact({ sectionId }: ImpactProps) {
   const [activeTab, setActiveTab] = useState<'waste' | 'carbon' | 'energy'>('waste');
   const [activeReportProject, setActiveReportProject] = useState<any | null>(null);
   const [hoveredCardId, setHoveredCardId] = useState<string | null>(null);

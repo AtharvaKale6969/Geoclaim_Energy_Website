@@ -81,13 +81,13 @@ export default function App() {
       case 'contact':
         return <Contact />;
       case 'services/biomass-fuel-supply':
-        return <BiomassFuelSupply onPageChange={handlePageChange} />;
+        return <BiomassFuelSupply />;
       case 'services/rdf-processing-supply':
-        return <RdfProcessingSupply onPageChange={handlePageChange} />;
+        return <RdfProcessingSupply />;
       case 'services/biogas-plant-establishment':
-        return <BiogasPlantEstablishment onPageChange={handlePageChange} />;
+        return <BiogasPlantEstablishment />;
       case 'services/plant-machinery-consulting':
-        return <PlantMachineryConsulting onPageChange={handlePageChange} />;
+        return <PlantMachineryConsulting />;
       default:
         return <Home onPageChange={handlePageChange} />;
     }
