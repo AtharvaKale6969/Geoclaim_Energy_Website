@@ -44,7 +44,7 @@ export default function ClientsAndPartners() {
               {partners.map((partner) => (
                 <div
                   key={`${loopIndex}-${partner.id}`}
-                  className="bg-white border border-gray-100 p-8 rounded-3xl w-[320px] md:w-[380px] inline-flex flex-col items-center text-center shrink-0 shadow-sm hover:shadow-xl hover:shadow-teal-900/5 hover:-translate-y-2 transition-all duration-500 cursor-pointer group/card h-[280px]"
+                  className="bg-white border border-gray-100 p-8 rounded-3xl w-[320px] md:w-[380px] inline-flex flex-col items-center text-center shrink-0 shadow-sm hover:shadow-xl hover:shadow-teal-900/5 hover:-translate-y-2 transition-all duration-500 cursor-pointer group/card h-full min-h-[280px]"
                 >
                   <div className="w-28 h-28 mb-auto flex items-center justify-center transition-transform duration-500 group-hover/card:scale-105">
                     <img 
