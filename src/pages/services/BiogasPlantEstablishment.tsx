@@ -52,9 +52,9 @@ export default function BiogasPlantEstablishment() {
   ];
 
   const clients = [
-    { title: 'Municipal Corporations', image: 'https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?auto=format&fit=crop&w=800&q=80' },
+    { title: 'Municipal Corporations', image: '/Municipal_Corporations.jpg' },
     { title: 'Agriculture Sector', image: '/Agriculture ecosystem.avif' },
-    { title: 'Community Infrastructure', image: 'https://images.unsplash.com/photo-1449844908441-8829872d2607?auto=format&fit=crop&w=800&q=80' }
+    { title: 'Community Infrastructure', image: '/Infrastructure.jpg' }
   ];
 
   // New Sections Data

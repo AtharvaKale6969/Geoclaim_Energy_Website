@@ -134,7 +134,7 @@ export default function BiomassFuelSupply() {
             transition={{ duration: 1.5, ease: "easeOut" }}
             alt="Biomass Fuel Supply"
             className="w-full h-full object-cover opacity-40"
-            src="/biomass_hero.png"
+            src="/solutions-biomass-hero.webp"
           />
         </div>
         <div className="absolute inset-0 bg-gradient-to-t from-[#041523] via-[#041523]/60 to-transparent pointer-events-none z-10" />
@@ -186,7 +186,7 @@ export default function BiomassFuelSupply() {
             className="lg:col-span-5 relative"
           >
             <div className="aspect-[4/5] rounded-[3rem] overflow-hidden shadow-2xl relative bg-gray-50 flex items-center justify-center p-4">
-              <img src="/Biogas_Plant.png" alt="Sustainable fuel bridging agriculture and industry" className="w-full h-full object-cover mix-blend-multiply" />
+              <img src="/Briquettes & Pellets_Website.png" alt="Sustainable fuel bridging agriculture and industry" className="w-full h-full object-cover mix-blend-multiply" />
             </div>
             <div className="absolute -bottom-8 -left-8 bg-white p-6 rounded-3xl shadow-[0_20px_40px_rgba(4,21,35,0.08)] border border-teal-50">
               <div className="flex items-center gap-4">

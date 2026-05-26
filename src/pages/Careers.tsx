@@ -81,7 +81,7 @@ export default function Careers() {
         'Prepare weekly yield and delivery logs for regional management.',
       ],
       requirements: [
-        '5+ years experience in agricultural supply chains or bioenergy systems.',
+        '0 - 2 years experience in agricultural supply chains or bioenergy systems.',
         'Strong community relations and vernacular communication skills.',
         'Bachelor’s degree in Agricultural Engineering, Environmental Science, or related fields.',
       ],
@@ -101,9 +101,9 @@ export default function Careers() {
         'Collaborate with engineering teams for seamless client onboarding.',
       ],
       requirements: [
-        '3+ years in B2B sales, energy sector, or industrial equipment sales.',
+        '0 - 2 years in B2B sales, energy sector, or industrial equipment sales.',
         'Excellent presentation, negotiation, and client relationship skills.',
-        'Bachelor’s degree in Business Administration, Marketing, or Engineering.',
+        'Bachelor’s degree in Business Administration, Marketing, or any related fields.',
       ],
       icon: Handshake,
     },

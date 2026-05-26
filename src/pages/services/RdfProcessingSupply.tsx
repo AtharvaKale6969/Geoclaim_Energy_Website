@@ -133,7 +133,7 @@ export default function RdfProcessingSupply() {
             transition={{ duration: 1.5, ease: "easeOut" }}
             alt="RDF Processing Supply"
             className="w-full h-full object-cover opacity-40"
-            src="/rdf_hero.png"
+            src="/RDF_Supply.avif"
           />
         </div>
         <div className="absolute inset-0 bg-gradient-to-t from-[#041523] via-[#041523]/60 to-transparent pointer-events-none z-10" />
@@ -229,7 +229,7 @@ export default function RdfProcessingSupply() {
                 transition={{ duration: 0.6, delay: 0.4 }}
                 className="group relative flex-1 rounded-[2rem] overflow-hidden cursor-pointer bg-white border border-gray-100"
               >
-                <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&q=80" alt="Sustainable Fuel Distribution" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" />
+                <img src="/Fuel_Distribute.avif" alt="Sustainable Fuel Distribution" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#041523]/90 via-transparent to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-500" />
                 <div className="absolute bottom-6 left-6 right-6">
                   <h3 className="text-white text-xl font-display font-bold leading-tight">Sustainable Fuel Distribution</h3>

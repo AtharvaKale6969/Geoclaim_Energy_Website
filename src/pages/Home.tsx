@@ -78,7 +78,7 @@ export default function Home({ onPageChange }: HomeProps) {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative min-h-[85vh] md:min-h-screen flex items-center pt-24 overflow-hidden">
+      <section className="relative min-h-[85vh] md:min-h-screen flex items-center pt-32 pb-16 md:pb-24 lg:pb-32 overflow-hidden">
         {/* Background Image with Overlay */}
         <div className="absolute inset-0 z-0">
           <img
@@ -128,8 +128,8 @@ export default function Home({ onPageChange }: HomeProps) {
             </div>
 
             {/* Trusted Logos */}
-            <div className="pt-8 border-t border-white/10">
-              <p className="text-white/50 text-xs font-semibold uppercase tracking-widest mb-4">
+            <div className="pt-12 border-t border-white/10 mt-4 pb-8 md:pb-12 lg:pb-16">
+              <p className="text-white/50 text-xs font-semibold uppercase tracking-widest mb-8">
                 Trusted by industry leaders
               </p>
               <div className="flex flex-wrap gap-8 opacity-40 font-display font-bold text-sm tracking-wider">
@@ -190,25 +190,25 @@ export default function Home({ onPageChange }: HomeProps) {
                 icon: <Recycle className="w-6 h-6" />,
                 title: 'Biomass Fuel Supply',
                 desc: 'Reliable sourcing and sustainable distribution of high-grade biomass fuels supporting industries, Government bodies & commercials and cleaner energy ecosystems.',
-                sectionId: 'biomass-fuel-supply',
+                path: 'services/biomass-fuel-supply',
               },
               {
                 icon: <Factory className="w-6 h-6" />,
                 title: 'RDF Processing & Supply',
                 desc: 'Refuse Derived Fuel production systems that convert municipal and industrial waste into high-calorific energy sources.',
-                sectionId: 'rdf-processing-supply',
+                path: 'services/rdf-processing-supply',
               },
               {
                 icon: <Droplets className="w-6 h-6" />,
                 title: 'Biogas Plant Establishment',
                 desc: 'Turnkey anaerobic digestion solutions for organic waste processing and renewable natural gas production.',
-                sectionId: 'biogas-plant-establishment',
+                path: 'services/biogas-plant-establishment',
               },
               {
                 icon: <Settings className="w-6 h-6" />,
                 title: 'Plant Machinery Supply & Consulting',
                 desc: 'Specialized machinery supply and strategic consulting for waste management infrastructure optimization.',
-                sectionId: 'plant-machinery-supply-consulting',
+                path: 'services/plant-machinery-consulting',
               },
             ].map((srv, i) => (
               <motion.div
@@ -222,7 +222,7 @@ export default function Home({ onPageChange }: HomeProps) {
                 <h3 className="font-display font-bold text-lg text-primary mb-4">{srv.title}</h3>
                 <p className="text-gray-600 text-xs sm:text-sm leading-relaxed mb-6 flex-grow">{srv.desc}</p>
                 <button
-                  onClick={() => onPageChange('products', srv.sectionId)}
+                  onClick={() => onPageChange(srv.path)}
                   className="text-primary hover:text-accent text-xs font-bold flex items-center gap-2 group/btn"
                 >
                   Learn More{' '}
@@ -396,28 +396,28 @@ export default function Home({ onPageChange }: HomeProps) {
                     {
                       quote: "Geoclaim helped us establish a more structured waste management and resource utilization process for our local community. Their practical approach has supported cleaner surroundings and better waste handling practices.",
                       author: "Grampanchayat Dhanla",
-                      role: "Rural Waste Management & Sustainability Initiative",
+                      company: "Local Government Body",
                       initial: "G",
                       highlights: ['Rural waste stream optimization', 'Community sustainability support', 'Cleaner local environmental impact']
                     },
                     {
                       quote: "By working with Geoclaim, we were able to explore cleaner fuel alternatives and improve operational sustainability. Their solutions helped us move toward a more efficient and environmentally responsible process.",
-                      author: "Graywal Industries",
-                      role: "Industrial Fuel & Sustainable Energy Solutions",
-                      initial: "G",
+                      author: "Jayant",
+                      company: "Foodverse Global Pvt. Ltd.",
+                      initial: "J",
                       highlights: ['Biomass fuel support', 'Reduced dependency on conventional fuel', 'Improved sustainability initiatives']
                     },
                     {
                       quote: "Geoclaim provided valuable guidance and support throughout our sustainability planning journey. Their team understood operational requirements and offered practical solutions tailored to our needs.",
-                      author: "Debarth Bannarjee",
-                      role: "Strategic Sustainability Consultation",
+                      author: "Debarth Banerjee",
+                      company: "Sampurna Solutions Pvt. Ltd.",
                       initial: "D",
                       highlights: ['Sustainability consultation', 'Waste-to-energy planning', 'Customized implementation support']
                     },
                     {
                       quote: "Working with Geoclaim strengthened our biomass procurement and supply operations. Their collaboration helped create a more reliable and efficient supply ecosystem.",
-                      author: "Saoner Biomass Supplier",
-                      role: "Biomass Procurement & Supply Chain Support",
+                      author: "Shree Khahshyam Baba",
+                      company: "Saoner Biomass Supplier",
                       initial: "S",
                       highlights: ['Biomass procurement partnership', 'Rural sourcing network support', 'Streamlined supply chain operations']
                     }
@@ -450,7 +450,7 @@ export default function Home({ onPageChange }: HomeProps) {
                         </div>
                         <div>
                           <div className="font-display font-bold text-xs text-primary">{t.author}</div>
-                          <div className="text-[10px] text-gray-500 mt-0.5">{t.role}</div>
+                          {t.company && <div className="text-[10px] text-gray-500 mt-0.5">{t.company}</div>}
                         </div>
                       </div>
                     </div>

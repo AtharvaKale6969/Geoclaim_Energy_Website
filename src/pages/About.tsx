@@ -24,7 +24,7 @@ export default function About({ onPageChange }: AboutProps) {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative h-[70vh] flex items-center overflow-hidden">
+      <section className="relative min-h-[70vh] flex items-center pt-24 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img
             alt="Sprawling cinematic industrial landscape"
