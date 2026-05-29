@@ -58,21 +58,7 @@ export default function PlantMachineryConsulting() {
     { title: 'Recycling Infrastructure', image: '/Recycling_Infrastructure.avif' }
   ];
 
-  const slideshowImages = [
-    { src: '/Composting Machine.jpeg', caption: 'Processing Equipment Solutions' },
-    { src: '/Belt Conveyer.jpeg', caption: 'Conveyor Systems' },
-    { src: '/Bailing Machine.jpeg', caption: 'Baling Machinery' },
-    { src: '/Consultancy.webp', caption: 'Machinery Consulting Support' }
-  ];
 
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentImageIndex((prev) => (prev + 1) % slideshowImages.length);
-    }, 4500);
-    return () => clearInterval(interval);
-  }, [slideshowImages.length]);
 
   // New Sections Data
   const highlights = [
@@ -140,17 +126,17 @@ export default function PlantMachineryConsulting() {
   ];
 
   const equipmentSolutions = [
-    { title: 'Weighing Machine', desc: 'Accurate industrial weighing solutions supporting waste handling, sorting and material management workflows.', icon: <Settings2 />, image: '/weighing_machine.png' },
-    { title: 'Conveyor Belt Systems', desc: 'Efficient material transfer systems designed to streamline waste processing and industrial operations.', icon: <Repeat />, image: '/conveyor_belt.png' },
-    { title: 'Grinder Machines', desc: 'Heavy-duty grinding equipment used for material size reduction and waste preparation processes.', icon: <Cog />, image: '/grinder_machine.png' },
-    { title: 'Organic Waste Composter', desc: 'Sustainable composting systems enabling effective conversion of organic waste into valuable outputs.', icon: <Leaf />, image: '/organic_composter.png' },
-    { title: 'Baling Machine', desc: 'Compaction systems designed for efficient waste handling, storage and transportation.', icon: <Factory />, image: '/baling_machine.png' },
-    { title: 'Washing Machine', desc: 'Industrial cleaning systems supporting recycling and waste processing operations.', icon: <Droplets />, image: '/washing_machine.png' },
-    { title: 'Agglomeration Systems', desc: 'Material densification equipment supporting recycling and processing applications.', icon: <Replace />, image: '/agglomeration_system.png' },
-    { title: 'Extruder Machines', desc: 'Industrial processing equipment used for material shaping and manufacturing support.', icon: <Wrench />, image: '/extruder_machine.png' },
-    { title: 'Sewing Machines', desc: 'Industrial bagging and packaging support equipment for material handling workflows.', icon: <Search />, image: '/sewing_machine.png' },
-    { title: 'Dust Remover Machine', desc: 'Specialized equipment designed to remove dust, fine particles and unwanted impurities from waste streams, improving material quality and processing efficiency.', icon: <ShieldCheck />, image: '/dust_remover.png' },
-    { title: 'Additional Industrial Equipment Solutions', desc: 'Customized machinery sourcing and consulting support tailored to operational requirements.', icon: <Settings />, image: '/additional_equipment.png' }
+    { title: 'Weighing Machine', desc: 'Accurate industrial weighing solutions supporting waste handling, sorting and material management workflows.', icon: <Settings2 />, image: '/Weight.jpeg' },
+    { title: 'Conveyor Belt Systems', desc: 'Efficient material transfer systems designed to streamline waste processing and industrial operations.', icon: <Repeat />, image: '/Belt Conveyer.jpeg' },
+    { title: 'Grinder Machines', desc: 'Heavy-duty grinding equipment used for material size reduction and waste preparation processes.', icon: <Cog />, image: '/Grinder.png' },
+    { title: 'Organic Waste Composter', desc: 'Sustainable composting systems enabling effective conversion of organic waste into valuable outputs.', icon: <Leaf />, image: '/Composting Machine.jpeg' },
+    { title: 'Baling Machine', desc: 'Compaction systems designed for efficient waste handling, storage and transportation.', icon: <Factory />, image: '/Bailing.jpeg' },
+    { title: 'Washing Machine', desc: 'Industrial cleaning systems supporting recycling and waste processing operations.', icon: <Droplets />, image: '/industrial-plastic-scrap-washing-machine-319.jpeg' },
+    { title: 'Agglomeration Systems', desc: 'Material densification equipment supporting recycling and processing applications.', icon: <Replace />, image: '/agglomerator-machine.jpeg' },
+    { title: 'Extruder Machines', desc: 'Industrial processing equipment used for material shaping and manufacturing support.', icon: <Wrench />, image: '/Extruder.webp' },
+    { title: 'Shredder Machine', desc: 'High-torque industrial shredding systems for efficient material volume reduction and waste processing.', icon: <Cog />, image: '/Shredder machine.png' },
+    { title: 'Dust Remover Machine', desc: 'Specialized equipment designed to remove dust, fine particles and unwanted impurities from waste streams, improving material quality and processing efficiency.', icon: <ShieldCheck />, image: '/Dust_Removal.png' },
+    { title: 'Additional Industrial Equipment Solutions', desc: 'Customized machinery sourcing and consulting support tailored to operational requirements.', icon: <Settings />, image: '/Additional.jpeg' }
   ];
 
   return (
@@ -235,53 +221,7 @@ export default function PlantMachineryConsulting() {
 
       <WorkflowSteps steps={workflowSteps} />
 
-      {/* 3. IMAGE EXPERIENCE SECTION (SLIDESHOW) */}
-      <section className="py-12 md:py-24 bg-gray-50 overflow-hidden">
-        <div className="max-w-6xl mx-auto px-4 md:px-8">
-          <div className="text-center mb-12">
-            <h2 className="font-display font-bold text-3xl md:text-4xl text-[#041523]">Machinery Showcase</h2>
-          </div>
-          <motion.div 
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="relative h-[400px] md:h-[600px] rounded-[3rem] overflow-hidden shadow-2xl shadow-primary/10 bg-white flex items-center justify-center p-4 md:p-12 border border-gray-100"
-          >
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={currentImageIndex}
-                initial={{ opacity: 0, scale: 0.98 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 1.02 }}
-                transition={{ duration: 0.8, ease: "easeInOut" }}
-                className="absolute inset-0 flex flex-col items-center justify-center p-6 md:p-12"
-              >
-                <img 
-                  src={slideshowImages[currentImageIndex].src} 
-                  alt={slideshowImages[currentImageIndex].caption} 
-                  className="w-full h-full object-contain mb-8 rounded-xl shadow-sm"
-                />
-                <div className="absolute bottom-8 left-0 right-0 text-center z-20">
-                  <span className="bg-[#041523]/90 backdrop-blur-md text-white px-6 py-2 rounded-full text-sm uppercase tracking-widest font-semibold shadow-xl">
-                    {slideshowImages[currentImageIndex].caption}
-                  </span>
-                </div>
-              </motion.div>
-            </AnimatePresence>
-            {/* Dots Indicator */}
-            <div className="absolute bottom-4 left-0 right-0 flex justify-center gap-3 z-30">
-              {slideshowImages.map((_, i) => (
-                <button
-                  key={i}
-                  onClick={() => setCurrentImageIndex(i)}
-                  className={`w-2.5 h-2.5 rounded-full transition-all duration-500 ${i === currentImageIndex ? 'bg-[#03818F] w-8' : 'bg-gray-300 hover:bg-gray-400'}`}
-                />
-              ))}
-            </div>
-          </motion.div>
-        </div>
-      </section>
+
 
       {/* MACHINERY AND EQUIPMENT SOLUTIONS */}
       <section className="py-24 bg-gray-50 border-y border-gray-100">
@@ -349,6 +289,36 @@ export default function PlantMachineryConsulting() {
         </div>
       </section>
 
+      {/* 7. WHOM WE CATER TO (CINEMATIC CARDS) */}
+      <section className="py-24 max-w-7xl mx-auto px-4 md:px-8 lg:px-16">
+        <div className="text-center mb-16">
+          <span className="text-[#03818F] font-bold tracking-widest uppercase text-xs mb-3 block">Target Audiences</span>
+          <h2 className="font-display font-bold text-3xl md:text-4xl text-[#041523]">Whom We Cater To</h2>
+        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+          {clients.map((client, idx) => (
+            <motion.div
+              key={idx}
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: idx * 0.1 }}
+              className="group relative h-[400px] rounded-[2rem] overflow-hidden cursor-pointer"
+            >
+              <img src={client.image} alt={client.title} className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#041523]/90 via-[#041523]/40 to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="absolute inset-0 flex flex-col justify-end p-8">
+                <h3 className="font-display font-bold text-xl md:text-2xl text-white leading-snug group-hover:text-[#00A8C6] transition-colors duration-300">
+                  {client.title}
+                </h3>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </section>
+
+      <ComplianceStandards standards={standards} />
+
       <KeyDeliverables deliverables={deliverables} />
 
       <ChallengeSolution items={challenges} />
@@ -388,35 +358,7 @@ export default function PlantMachineryConsulting() {
 
       <ServiceFAQ faqs={faqs} />
 
-      <ComplianceStandards standards={standards} />
 
-      {/* 7. WHOM WE CATER TO (CINEMATIC CARDS) */}
-      <section className="py-24 max-w-7xl mx-auto px-4 md:px-8 lg:px-16">
-        <div className="text-center mb-16">
-          <span className="text-[#03818F] font-bold tracking-widest uppercase text-xs mb-3 block">Target Audiences</span>
-          <h2 className="font-display font-bold text-3xl md:text-4xl text-[#041523]">Whom We Cater To</h2>
-        </div>
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-          {clients.map((client, idx) => (
-            <motion.div
-              key={idx}
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: idx * 0.1 }}
-              className="group relative h-[400px] rounded-[2rem] overflow-hidden cursor-pointer"
-            >
-              <img src={client.image} alt={client.title} className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#041523]/90 via-[#041523]/40 to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-500" />
-              <div className="absolute inset-0 flex flex-col justify-end p-8">
-                <h3 className="font-display font-bold text-xl md:text-2xl text-white leading-snug group-hover:text-[#00A8C6] transition-colors duration-300">
-                  {client.title}
-                </h3>
-              </div>
-            </motion.div>
-          ))}
-        </div>
-      </section>
     </div>
   );
 }

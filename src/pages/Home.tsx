@@ -395,9 +395,9 @@ export default function Home({ onPageChange }: HomeProps) {
                   {[
                     {
                       quote: "Geoclaim helped us establish a more structured waste management and resource utilization process for our local community. Their practical approach has supported cleaner surroundings and better waste handling practices.",
-                      author: "Grampanchayat Dhanla",
-                      company: "Local Government Body",
-                      initial: "G",
+                      author: "Kailas Nikure",
+                      company: "Grampanchayat Dhanla",
+                      initial: "K",
                       highlights: ['Rural waste stream optimization', 'Community sustainability support', 'Cleaner local environmental impact']
                     },
                     {
@@ -410,13 +410,13 @@ export default function Home({ onPageChange }: HomeProps) {
                     {
                       quote: "Geoclaim provided valuable guidance and support throughout our sustainability planning journey. Their team understood operational requirements and offered practical solutions tailored to our needs.",
                       author: "Debarth Banerjee",
-                      company: "Sampurna Solutions Pvt. Ltd.",
+                      company: "Sampurn(e)arth Environment Solutions Pvt. Ltd.",
                       initial: "D",
                       highlights: ['Sustainability consultation', 'Waste-to-energy planning', 'Customized implementation support']
                     },
                     {
                       quote: "Working with Geoclaim strengthened our biomass procurement and supply operations. Their collaboration helped create a more reliable and efficient supply ecosystem.",
-                      author: "Shree Khahshyam Baba",
+                      author: "Shree Khatushyam Baba",
                       company: "Saoner Biomass Supplier",
                       initial: "S",
                       highlights: ['Biomass procurement partnership', 'Rural sourcing network support', 'Streamlined supply chain operations']

@@ -245,7 +245,7 @@ export default function BiomassFuelSupply() {
                 transition={{ duration: 0.6, delay: 0.4 }}
                 className="group relative flex-1 rounded-[2rem] overflow-hidden cursor-pointer bg-white border border-gray-100"
               >
-                <img src="/Biogas_infrastructure_Solution.png" alt="Industrial Biomass Solutions" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" />
+                <img src="/Industrial Biomass solutions.jpg" alt="Industrial Biomass Solutions" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#041523]/90 via-transparent to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-500" />
                 <div className="absolute bottom-6 left-6 right-6">
                   <h3 className="text-white text-xl font-display font-bold leading-tight">Industrial Biomass Solutions</h3>
@@ -281,6 +281,36 @@ export default function BiomassFuelSupply() {
           ))}
         </div>
       </section>
+
+      {/* 7. WHOM WE CATER TO (CINEMATIC CARDS) */}
+      <section className="py-24 max-w-7xl mx-auto px-4 md:px-8 lg:px-16">
+        <div className="text-center mb-16">
+          <span className="text-[#03818F] font-bold tracking-widest uppercase text-xs mb-3 block">Target Audiences</span>
+          <h2 className="font-display font-bold text-3xl md:text-4xl text-[#041523]">Whom We Cater To</h2>
+        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          {clients.map((client, idx) => (
+            <motion.div
+              key={idx}
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: idx * 0.1 }}
+              className="group relative h-[350px] rounded-[2rem] overflow-hidden cursor-pointer"
+            >
+              <img src={client.image} alt={client.title} className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#041523]/90 via-[#041523]/40 to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="absolute inset-0 flex flex-col justify-end p-8">
+                <h3 className="font-display font-bold text-xl md:text-2xl text-white leading-snug group-hover:text-[#00A8C6] transition-colors duration-300">
+                  {client.title}
+                </h3>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </section>
+
+      <ComplianceStandards standards={standards} />
 
       <KeyDeliverables deliverables={deliverables} />
 
@@ -321,35 +351,7 @@ export default function BiomassFuelSupply() {
 
       <ServiceFAQ faqs={faqs} />
 
-      <ComplianceStandards standards={standards} />
 
-      {/* 7. WHOM WE CATER TO (CINEMATIC CARDS) */}
-      <section className="py-24 max-w-7xl mx-auto px-4 md:px-8 lg:px-16">
-        <div className="text-center mb-16">
-          <span className="text-[#03818F] font-bold tracking-widest uppercase text-xs mb-3 block">Target Audiences</span>
-          <h2 className="font-display font-bold text-3xl md:text-4xl text-[#041523]">Whom We Cater To</h2>
-        </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-          {clients.map((client, idx) => (
-            <motion.div
-              key={idx}
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: idx * 0.1 }}
-              className="group relative h-[350px] rounded-[2rem] overflow-hidden cursor-pointer"
-            >
-              <img src={client.image} alt={client.title} className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#041523]/90 via-[#041523]/40 to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-500" />
-              <div className="absolute inset-0 flex flex-col justify-end p-8">
-                <h3 className="font-display font-bold text-xl md:text-2xl text-white leading-snug group-hover:text-[#00A8C6] transition-colors duration-300">
-                  {client.title}
-                </h3>
-              </div>
-            </motion.div>
-          ))}
-        </div>
-      </section>
     </div>
   );
 }
