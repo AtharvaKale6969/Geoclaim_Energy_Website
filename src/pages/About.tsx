@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { CheckCircle2, Leaf, Cpu, Award, Compass, Eye, ShieldCheck, Globe, Users } from 'lucide-react';
+import { CheckCircle2, Leaf, Cpu, Award, Compass, Eye, ShieldCheck } from 'lucide-react';
 
 interface AboutProps {
   onPageChange: (page: string) => void;
