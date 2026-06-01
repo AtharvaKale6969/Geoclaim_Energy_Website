@@ -381,23 +381,23 @@ export default function Impact({ sectionId }: ImpactProps) {
     {
       id: 'waste' as const,
       label: 'Waste Diversion',
-      metric: '92.4%',
+      metric: '1000+',
       desc: 'Proportion of incoming feedstock diverted from landfills directly into fuel production streams.',
       subMetrics: [
-        { label: 'Total Diverted', value: '450,000+ Tons' },
-        { label: 'Recycled Byproducts', value: '38,200 Tons' },
+        { label: 'Total Diverted', value: '1,000+ Tons' },
+        { label: 'Recycled Byproducts', value: '150 Tons' },
         { label: 'Landfill Avoidance', value: '98%' },
       ],
     },
     {
       id: 'carbon' as const,
       label: 'Carbon Offsets',
-      metric: '45.2k',
+      metric: '32%',
       desc: 'Tons of CO2 equivalent offset through replacement of fossil fuels and reduction of landfill methane emissions.',
       subMetrics: [
-        { label: 'Fossil Displacement', value: '28,400 tCO2e' },
-        { label: 'Landfill Gas Capture', value: '16,800 tCO2e' },
-        { label: 'Net Annual Savings', value: '100%' },
+        { label: 'Overall Reduction', value: '32%' },
+        { label: 'Fossil Displacement', value: '18%' },
+        { label: 'Landfill Gas Capture', value: '14%' },
       ],
     },
     {
@@ -408,7 +408,7 @@ export default function Impact({ sectionId }: ImpactProps) {
       subMetrics: [
         { label: 'Thermal Output', value: '820 MW' },
         { label: 'Grid-Ready Power', value: '380 MW' },
-        { label: 'Factory Powering', value: '24 Units' },
+        { label: 'Clients Served', value: '20+' },
       ],
     },
 
@@ -723,14 +723,14 @@ export default function Impact({ sectionId }: ImpactProps) {
                       <div className="bg-teal-50/15 border border-teal-100/30 p-5 rounded-2xl shadow-[0_4px_12px_rgba(3,129,143,0.01)]">
                         <span className="text-[#034152]/60 text-xs font-semibold block mb-1">Total Diverted</span>
                         <div className="text-lg font-bold text-[#041523]">
-                          <CountUp from={0} to={450000} duration={1.5} suffix="+" />
+                          <CountUp from={0} to={1000} duration={1.5} suffix="+" />
                           <span className="text-xs font-medium text-[#034152]/60 block sm:inline sm:ml-1">Tons</span>
                         </div>
                       </div>
                       <div className="bg-teal-50/15 border border-teal-100/30 p-5 rounded-2xl shadow-[0_4px_12px_rgba(3,129,143,0.01)]">
                         <span className="text-[#034152]/60 text-xs font-semibold block mb-1">Recycled Byproducts</span>
                         <div className="text-lg font-bold text-[#041523]">
-                          <CountUp from={0} to={38200} duration={1.5} />
+                          <CountUp from={0} to={150} duration={1.5} />
                           <span className="text-xs font-medium text-[#034152]/60 block sm:inline sm:ml-1">Tons</span>
                         </div>
                       </div>
@@ -746,23 +746,21 @@ export default function Impact({ sectionId }: ImpactProps) {
                   {activeTab === 'carbon' && (
                     <>
                       <div className="bg-teal-50/15 border border-teal-100/30 p-5 rounded-2xl shadow-[0_4px_12px_rgba(3,129,143,0.01)]">
+                        <span className="text-[#034152]/60 text-xs font-semibold block mb-1">Overall Reduction</span>
+                        <div className="text-lg font-bold text-[#041523]">
+                          <CountUp from={0} to={32} duration={1.5} suffix="%" />
+                        </div>
+                      </div>
+                      <div className="bg-teal-50/15 border border-teal-100/30 p-5 rounded-2xl shadow-[0_4px_12px_rgba(3,129,143,0.01)]">
                         <span className="text-[#034152]/60 text-xs font-semibold block mb-1">Fossil Displacement</span>
                         <div className="text-lg font-bold text-[#041523]">
-                          <CountUp from={0} to={28400} duration={1.5} />
-                          <span className="text-xs font-medium text-[#034152]/60 block sm:inline sm:ml-1">tCO2e</span>
+                          <CountUp from={0} to={18} duration={1.5} suffix="%" />
                         </div>
                       </div>
                       <div className="bg-teal-50/15 border border-teal-100/30 p-5 rounded-2xl shadow-[0_4px_12px_rgba(3,129,143,0.01)]">
                         <span className="text-[#034152]/60 text-xs font-semibold block mb-1">Landfill Gas Capture</span>
-                        <div className="text-lg font-bold text-[#041523]">
-                          <CountUp from={0} to={16800} duration={1.5} />
-                          <span className="text-xs font-medium text-[#034152]/60 block sm:inline sm:ml-1">tCO2e</span>
-                        </div>
-                      </div>
-                      <div className="bg-teal-50/15 border border-teal-100/30 p-5 rounded-2xl shadow-[0_4px_12px_rgba(3,129,143,0.01)]">
-                        <span className="text-[#034152]/60 text-xs font-semibold block mb-1">Net Annual Savings</span>
                         <div className="text-lg font-bold text-[#00A8C6]">
-                          <CountUp from={0} to={100} duration={1.5} suffix="%" />
+                          <CountUp from={0} to={14} duration={1.5} suffix="%" />
                         </div>
                       </div>
                     </>
@@ -783,9 +781,9 @@ export default function Impact({ sectionId }: ImpactProps) {
                         </div>
                       </div>
                       <div className="bg-teal-50/15 border border-teal-100/30 p-5 rounded-2xl shadow-[0_4px_12px_rgba(3,129,143,0.01)]">
-                        <span className="text-[#034152]/60 text-xs font-semibold block mb-1">Factory Powering</span>
+                        <span className="text-[#034152]/60 text-xs font-semibold block mb-1">Clients Served</span>
                         <div className="text-lg font-bold text-amber-600">
-                          <CountUp from={0} to={24} duration={1.5} suffix=" Units" />
+                          <CountUp from={0} to={20} duration={1.5} suffix="+" />
                         </div>
                       </div>
                     </>

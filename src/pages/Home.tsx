@@ -146,9 +146,9 @@ export default function Home({ onPageChange }: HomeProps) {
       <section className="py-20 bg-white relative">
         <div className="max-w-7xl mx-auto px-4 md:px-8 lg:px-16 grid grid-cols-2 lg:grid-cols-4 gap-8">
           {[
-            { target: 450, suffix: 'k+', label: 'Waste Processed (t)' },
+            { target: 1000, suffix: '+', label: 'Waste Processed (t)' },
             { target: 32, suffix: '%', label: 'Carbon Reduced' },
-            { target: 120, suffix: '+', label: 'Clients Served' },
+            { target: 20, suffix: '+', label: 'Clients Served' },
             { target: 1.2, suffix: 'GW', label: 'Energy Generated' },
           ].map((metric, i) => (
             <div
@@ -402,9 +402,9 @@ export default function Home({ onPageChange }: HomeProps) {
                     },
                     {
                       quote: "By working with Geoclaim, we were able to explore cleaner fuel alternatives and improve operational sustainability. Their solutions helped us move toward a more efficient and environmentally responsible process.",
-                      author: "Jayant",
+                      author: "Praful Marotkar",
                       company: "Foodverse Global Pvt. Ltd.",
-                      initial: "J",
+                      initial: "P",
                       highlights: ['Biomass fuel support', 'Reduced dependency on conventional fuel', 'Improved sustainability initiatives']
                     },
                     {
@@ -413,13 +413,6 @@ export default function Home({ onPageChange }: HomeProps) {
                       company: "Sampurn(e)arth Environment Solutions Pvt. Ltd.",
                       initial: "D",
                       highlights: ['Sustainability consultation', 'Waste-to-energy planning', 'Customized implementation support']
-                    },
-                    {
-                      quote: "Working with Geoclaim strengthened our biomass procurement and supply operations. Their collaboration helped create a more reliable and efficient supply ecosystem.",
-                      author: "Shree Khatushyam Baba",
-                      company: "Saoner Biomass Supplier",
-                      initial: "S",
-                      highlights: ['Biomass procurement partnership', 'Rural sourcing network support', 'Streamlined supply chain operations']
                     }
                   ].map((t, idx) => (
                     <div
