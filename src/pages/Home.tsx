@@ -390,7 +390,7 @@ export default function Home({ onPageChange }: HomeProps) {
           {/* Infinite Scroll Testimonials Container */}
           <div className="w-full overflow-hidden relative py-8 before:absolute before:left-0 before:top-0 before:bottom-0 before:w-16 sm:before:w-32 before:bg-gradient-to-r before:from-white before:to-transparent before:z-10 after:absolute after:right-0 after:top-0 after:bottom-0 after:w-16 sm:after:w-32 after:bg-gradient-to-l after:from-white after:to-transparent after:z-10">
             <div className="flex w-max animate-scroll hover:[animation-play-state:paused] whitespace-nowrap">
-              {[1, 2].map((loop) => (
+              {[1, 2, 3, 4].map((loop) => (
                 <div key={loop} className="flex gap-6 md:gap-8 shrink-0 pr-6 md:pr-8">
                   {[
                     {

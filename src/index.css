@@ -9,7 +9,7 @@
   --color-accent: #00bcd4;
   
   --animate-fade-in-up: fadeInUp 0.8s ease-out forwards;
-  --animate-scroll: scroll 40s linear infinite;
+  --animate-scroll: scroll 30s linear infinite;
   --animate-sweep: sweep 2.5s infinite;
   
   @keyframes fadeInUp {
