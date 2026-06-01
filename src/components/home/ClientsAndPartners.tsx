@@ -10,10 +10,6 @@ const clients = [
     image: '/Sampurnaearth Solutions.png',
   },
   {
-    id: 3,
-    name: 'Saoner Biomass Supplier',
-  },
-  {
     id: 4,
     name: 'Grampanchayat Dhanla',
     image: '/Gram_Panchayat_Dhanla.png',
