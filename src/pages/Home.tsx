@@ -3,6 +3,7 @@ import heroImg from "../assets/Image_Hero.png";
 import { motion, useInView } from 'framer-motion';
 import { ArrowRight, Recycle, Flame, Factory, ShieldCheck, Settings, Droplets } from 'lucide-react';
 import ClientsAndPartners from '../components/home/ClientsAndPartners';
+import SeamlessImage from '../components/SeamlessImage';
 
 interface HomeProps {
   onPageChange: (page: string, sectionId?: string) => void;
@@ -81,10 +82,12 @@ export default function Home({ onPageChange }: HomeProps) {
       <section className="relative min-h-[85vh] md:min-h-screen flex items-center pt-32 pb-16 md:pb-24 lg:pb-32 overflow-hidden">
         {/* Background Image with Overlay */}
         <div className="absolute inset-0 z-0">
-          <img
+          <SeamlessImage
             alt="Geoclaim Energy Industrial Plant"
-            className="w-full h-full object-cover object-[center_top] md:object-center"
+            className="w-full h-full"
+            imgClassName="object-[center_top] md:object-center"
             src={heroImg}
+            priority={true}
           />
           <div className="absolute inset-0 bg-gradient-to-r from-teal-900/80 via-teal-800/50 to-transparent"></div>
         </div>
@@ -127,17 +130,7 @@ export default function Home({ onPageChange }: HomeProps) {
               </button>
             </div>
 
-            {/* Trusted Logos */}
-            <div className="pt-12 border-t border-white/10 mt-4 pb-8 md:pb-12 lg:pb-16">
-              <p className="text-white/50 text-xs font-semibold uppercase tracking-widest mb-8">
-                Trusted by industry leaders
-              </p>
-              <div className="flex flex-wrap gap-8 opacity-40 font-display font-bold text-sm tracking-wider">
-                <span>INDUS-CORP</span>
-                <span>ECO-POWER</span>
-                <span>META-GRID</span>
-              </div>
-            </div>
+
           </motion.div>
         </div>
       </section>

@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
+import SeamlessImage from '../components/SeamlessImage';
 
 interface ProductsProps {
   sectionId?: string;
@@ -162,10 +163,11 @@ export default function Products({ sectionId, onPageChange }: ProductsProps) {
             >
               {/* Top: Large Image */}
               <div className="relative h-64 sm:h-80 w-full overflow-hidden">
-                <img 
+                <SeamlessImage 
                   src={srv.image} 
                   alt={srv.title} 
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  className="w-full h-full"
+                  imgClassName="transition-transform duration-700 group-hover:scale-105"
                 />
                 {/* Darker overlay on hover for premium feel */}
                 <div className="absolute inset-0 bg-gradient-to-t from-[#041523]/80 via-[#041523]/20 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-500 pointer-events-none" />

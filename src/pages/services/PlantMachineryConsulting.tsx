@@ -7,6 +7,7 @@ import {
   ServiceFAQ, ComplianceStandards, RegionalCoverage, QuickSnapshot, 
   BeforeAfterImpact, ConnectedEcosystem 
 } from '../../components/services/PremiumSections';
+import SeamlessImage from '../../components/SeamlessImage';
 
 function AnimatedCounter({ value, suffix = '' }: { value: number, suffix?: string }) {
   const ref = useRef<HTMLSpanElement>(null);
@@ -202,7 +203,7 @@ export default function PlantMachineryConsulting() {
             className="lg:col-span-5 relative"
           >
             <div className="aspect-[4/5] rounded-[3rem] overflow-hidden shadow-2xl relative bg-gray-50 flex items-center justify-center p-4">
-              <img src="/Consultancy.webp" alt="Consulting" className="w-full h-full object-cover mix-blend-multiply" />
+              <SeamlessImage src="/Consultancy.webp" alt="Consulting" className="w-full h-full mix-blend-multiply" imgClassName="object-cover" />
             </div>
             <div className="absolute -bottom-8 -right-8 bg-white p-6 rounded-3xl shadow-[0_20px_40px_rgba(4,21,35,0.08)] border border-teal-50">
               <div className="flex items-center gap-4">
@@ -242,10 +243,11 @@ export default function PlantMachineryConsulting() {
                 className="bg-white rounded-3xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-[0_20px_40px_rgba(0,168,198,0.08)] hover:-translate-y-2 transition-all duration-300 flex flex-col group h-full"
               >
                 <div className="h-48 bg-gray-50/50 p-6 flex items-center justify-center border-b border-gray-100 relative overflow-hidden">
-                  <img 
+                  <SeamlessImage 
                     src={eq.image} 
                     alt={eq.title} 
-                    className="w-full h-full object-contain mix-blend-multiply group-hover:scale-105 transition-transform duration-500" 
+                    className="w-full h-full mix-blend-multiply" 
+                    imgClassName="object-contain transition-transform duration-500 group-hover:scale-105"
                   />
                   {/* Subtle overlay gradient */}
                   <div className="absolute inset-0 bg-gradient-to-t from-gray-100/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -305,7 +307,7 @@ export default function PlantMachineryConsulting() {
               transition={{ duration: 0.6, delay: idx * 0.1 }}
               className="group relative h-[400px] rounded-[2rem] overflow-hidden cursor-pointer"
             >
-              <img src={client.image} alt={client.title} className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
+              <SeamlessImage src={client.image} alt={client.title} className="w-full h-full" imgClassName="object-cover transition-transform duration-1000 group-hover:scale-110" />
               <div className="absolute inset-0 bg-gradient-to-t from-[#041523]/90 via-[#041523]/40 to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-500" />
               <div className="absolute inset-0 flex flex-col justify-end p-8">
                 <h3 className="font-display font-bold text-xl md:text-2xl text-white leading-snug group-hover:text-[#00A8C6] transition-colors duration-300">

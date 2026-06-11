@@ -48,9 +48,6 @@ export default function Navbar({ currentPage, onPageChange }: NavbarProps) {
       label: 'Impact & Operations',
       dropdownItems: [
         { label: 'Sustainability Performance', sectionId: 'dashboard-section' },
-        { label: 'Punjab Biomass Cluster', sectionId: 'punjab' },
-        { label: 'Karnataka Biogas Plant', sectionId: 'karnataka' },
-        { label: 'Industrial RDF Supply Unit', sectionId: 'rdf-unit' },
       ],
     },
     { id: 'blog', label: 'Blog' },

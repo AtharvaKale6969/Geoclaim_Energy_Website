@@ -1,6 +1,7 @@
 import { useState, useRef } from 'react';
 import { Mail, Phone, MapPin, ChevronDown, CheckCircle2, Send } from 'lucide-react';
 import { motion, useScroll, useTransform } from 'framer-motion';
+import SeamlessImage from '../components/SeamlessImage';
 
 function GreenParticles() {
   return (
@@ -121,10 +122,12 @@ export default function Contact() {
             transition={{ duration: 10, ease: "easeOut" }}
             className="absolute inset-0 w-full h-full"
           >
-            <img 
+            <SeamlessImage 
               src="/contact-hero.png" 
               alt="Sustainable Business Partnerships" 
-              className="absolute inset-0 w-full h-full object-cover object-[center_30%]"
+              className="absolute inset-0 w-full h-full"
+              imgClassName="object-cover object-[center_30%]"
+              priority={true}
             />
           </motion.div>
 

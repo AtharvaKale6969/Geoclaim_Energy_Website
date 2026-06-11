@@ -7,6 +7,7 @@ import {
   ServiceFAQ, ComplianceStandards, RegionalCoverage, QuickSnapshot, 
   BeforeAfterImpact, ConnectedEcosystem 
 } from '../../components/services/PremiumSections';
+import SeamlessImage from '../../components/SeamlessImage';
 
 function AnimatedCounter({ value, suffix = '' }: { value: number, suffix?: string }) {
   const ref = useRef<HTMLSpanElement>(null);
@@ -185,7 +186,7 @@ export default function RdfProcessingSupply() {
             className="lg:col-span-5 relative"
           >
             <div className="aspect-[4/5] rounded-[3rem] overflow-hidden shadow-2xl relative bg-gray-50 flex items-center justify-center p-4">
-              <img src="/RDF_Processing&Supply.jpg" alt="RDF Processing" className="w-full h-full object-cover mix-blend-multiply" />
+              <SeamlessImage src="/RDF_Processing&Supply.jpg" alt="RDF Processing" className="w-full h-full mix-blend-multiply" imgClassName="object-cover" />
             </div>
             <div className="absolute -bottom-8 -left-8 bg-white p-6 rounded-3xl shadow-[0_20px_40px_rgba(4,21,35,0.08)] border border-teal-50">
               <div className="flex items-center gap-4">
@@ -216,7 +217,7 @@ export default function RdfProcessingSupply() {
                 transition={{ duration: 0.6, delay: 0.2 }}
                 className="group relative flex-1 rounded-[2rem] overflow-hidden cursor-pointer bg-white border border-gray-100"
               >
-                <img src="/Industrial_RDF.jpg" alt="Industrial RDF Applications" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" />
+                <SeamlessImage src="/Industrial_RDF.jpg" alt="Industrial RDF Applications" className="w-full h-full" imgClassName="object-cover transition-transform duration-1000 group-hover:scale-105" />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#041523]/90 via-transparent to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-500" />
                 <div className="absolute bottom-6 left-6 right-6">
                   <h3 className="text-white text-xl font-display font-bold leading-tight">Industrial RDF Applications</h3>
@@ -229,7 +230,7 @@ export default function RdfProcessingSupply() {
                 transition={{ duration: 0.6, delay: 0.4 }}
                 className="group relative flex-1 rounded-[2rem] overflow-hidden cursor-pointer bg-white border border-gray-100"
               >
-                <img src="/Fuel_Distribute.avif" alt="Sustainable Fuel Distribution" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" />
+                <SeamlessImage src="/Fuel_Distribute.avif" alt="Sustainable Fuel Distribution" className="w-full h-full" imgClassName="object-cover transition-transform duration-1000 group-hover:scale-105" />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#041523]/90 via-transparent to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-500" />
                 <div className="absolute bottom-6 left-6 right-6">
                   <h3 className="text-white text-xl font-display font-bold leading-tight">Sustainable Fuel Distribution</h3>
@@ -244,7 +245,7 @@ export default function RdfProcessingSupply() {
               transition={{ duration: 0.6 }}
               className="md:col-span-2 group relative h-[300px] md:h-[500px] rounded-[2.5rem] overflow-hidden cursor-pointer bg-white border border-gray-100"
             >
-              <img src="/Waste to fuel.webp" alt="Waste-to-Fuel Operations" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" />
+              <SeamlessImage src="/Waste to fuel_new.jpg" alt="Waste-to-Fuel Operations" className="w-full h-full" imgClassName="object-cover transition-transform duration-1000 group-hover:scale-105" />
               <div className="absolute inset-0 bg-gradient-to-t from-[#041523]/90 via-[#041523]/30 to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-500" />
               <div className="absolute bottom-10 left-10">
                 <p className="text-accent text-sm font-semibold tracking-wider uppercase mb-2">Ecosystem</p>
@@ -297,7 +298,7 @@ export default function RdfProcessingSupply() {
               transition={{ duration: 0.6, delay: idx * 0.1 }}
               className="group relative h-[400px] rounded-[2rem] overflow-hidden cursor-pointer"
             >
-              <img src={client.image} alt={client.title} className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
+              <SeamlessImage src={client.image} alt={client.title} className="w-full h-full" imgClassName="object-cover transition-transform duration-1000 group-hover:scale-110" />
               <div className="absolute inset-0 bg-gradient-to-t from-[#041523]/90 via-[#041523]/40 to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-500" />
               <div className="absolute inset-0 flex flex-col justify-end p-8">
                 <h3 className="font-display font-bold text-xl md:text-2xl text-white leading-snug group-hover:text-[#00A8C6] transition-colors duration-300">

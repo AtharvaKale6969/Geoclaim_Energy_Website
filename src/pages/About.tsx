@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { CheckCircle2, Leaf, Cpu, Award, Compass, Eye, ShieldCheck } from 'lucide-react';
+import SeamlessImage from '../components/SeamlessImage';
 
 interface AboutProps {
   onPageChange: (page: string) => void;
@@ -26,10 +27,11 @@ export default function About({ onPageChange }: AboutProps) {
       {/* Hero Section */}
       <section className="relative min-h-[70vh] flex items-center pt-24 overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <img
+          <SeamlessImage
             alt="Sprawling cinematic industrial landscape"
-            className="w-full h-full object-cover"
+            className="w-full h-full"
             src="https://lh3.googleusercontent.com/aida-public/AB6AXuAop6Cf0QH0yjqs6aygRyKhj2dMfYjVafJqH0s9oEam8MQ7tFJVRtVgA_q6rJ3ULxpj0pLRuQ8ROu1ZJ10qTir03D_xa-rgcgIbST8tpHKw1c-ABe06X6ecoUAV2-yIgCEJ--JoZgk-MvKuwK3XdRXD6h8XouAyuNHVbRHJQ17zwEwzysjw9kVINkkpZNKaMiaH67kFPOdyFP4PQN2V1Dvq7hLLUEv9S0SzlaD05TvAUZH6mTgCwscaJkBWG8cxuLkBcU05loHVKPK2"
+            priority={true}
           />
           <div className="absolute inset-0 bg-gradient-to-r from-[#0c1d2b]/85 via-[#0c1d2b]/40 to-transparent"></div>
         </div>
@@ -95,10 +97,11 @@ export default function About({ onPageChange }: AboutProps) {
               <div>
                 {/* Image at Top */}
                 <div className="relative h-60 w-full overflow-hidden rounded-t-[23px] transform translate-z-0">
-                  <img
+                  <SeamlessImage
                     src="/mission-compass.jpg"
                     alt="Compass pointing towards mission"
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 select-none pointer-events-none"
+                    className="w-full h-full"
+                    imgClassName="transition-transform duration-700 group-hover:scale-105 select-none pointer-events-none"
                   />
                   {/* Dark teal gradient overlay */}
                   <div className="absolute inset-0 bg-gradient-to-t from-[#041523]/90 via-[#034152]/40 to-transparent" />
@@ -154,10 +157,11 @@ export default function About({ onPageChange }: AboutProps) {
               <div>
                 {/* Image at Top */}
                 <div className="relative h-60 w-full overflow-hidden rounded-t-[23px] transform translate-z-0">
-                  <img
+                  <SeamlessImage
                     src="/vision-binoculars.jpg"
                     alt="Binoculars overlooking clean energy transition future"
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 select-none pointer-events-none"
+                    className="w-full h-full"
+                    imgClassName="transition-transform duration-700 group-hover:scale-105 select-none pointer-events-none"
                   />
                   {/* Dark teal gradient overlay */}
                   <div className="absolute inset-0 bg-gradient-to-t from-[#041523]/90 via-[#034152]/40 to-transparent" />
