@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import { MapPin, CheckCircle2, ChevronRight, ArrowDown, Leaf, TrendingUp, Cpu, X, Download, ShieldCheck, FlaskConical, Settings, Activity } from 'lucide-react';
+import { MapPin, CheckCircle2, ArrowDown, Leaf, TrendingUp, Cpu, X, ShieldCheck, FlaskConical, Settings, Activity } from 'lucide-react';
 import { motion, useScroll, useTransform, useInView, AnimatePresence } from 'framer-motion';
 
 interface ImpactProps {
@@ -272,96 +272,10 @@ function EnergyBars() {
 }
 
 
-function PunjabMiniChart() {
-  return (
-    <div className="h-16 w-full flex items-center justify-between bg-white/[0.02] border border-white/5 rounded-xl p-3 relative overflow-hidden">
-      <div className="flex flex-col text-left">
-        <span className="text-[9px] text-gray-400 font-semibold uppercase tracking-wider">Stubble Burn Reduction</span>
-        <span className="text-xs font-bold text-emerald-400">-72% Net</span>
-      </div>
-      <div className="w-24 h-10">
-        <svg viewBox="0 0 100 40" className="w-full h-full overflow-visible">
-          <motion.path
-            d="M 5 35 Q 25 30 45 15 T 85 5"
-            fill="none"
-            stroke="#10B981"
-            strokeWidth="2.5"
-            strokeLinecap="round"
-            initial={{ pathLength: 0 }}
-            whileInView={{ pathLength: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 1.5, ease: "easeOut" }}
-          />
-          <circle cx="5" cy="35" r="2" fill="#10B981" />
-          <circle cx="85" cy="5" r="3.5" fill="#10B981" className="animate-ping" />
-          <circle cx="85" cy="5" r="2" fill="white" />
-        </svg>
-      </div>
-    </div>
-  );
-}
-
-function KarnatakaMiniChart() {
-  const radius = 15;
-  const circumference = 2 * Math.PI * radius;
-  return (
-    <div className="h-16 w-full flex items-center justify-between bg-white/[0.02] border border-white/5 rounded-xl p-3 relative overflow-hidden">
-      <div className="flex flex-col text-left">
-        <span className="text-[9px] text-gray-400 font-semibold uppercase tracking-wider">Bio-CNG Purity</span>
-        <span className="text-xs font-bold text-[#00A8C6]">95.4% Certified</span>
-      </div>
-      <div className="relative w-10 h-10 flex items-center justify-center">
-        <svg className="w-10 h-10 transform -rotate-90">
-          <circle cx="20" cy="20" r={radius} stroke="rgba(255,255,255,0.05)" strokeWidth="3.5" fill="none" />
-          <motion.circle
-            cx="20"
-            cy="20"
-            r={radius}
-            stroke="#00A8C6"
-            strokeWidth="3.5"
-            fill="none"
-            strokeDasharray={circumference}
-            initial={{ strokeDashoffset: circumference }}
-            whileInView={{ strokeDashoffset: circumference - (95.4 / 100) * circumference }}
-            viewport={{ once: true }}
-            transition={{ duration: 1.5, ease: "easeOut" }}
-            style={{ strokeLinecap: 'round' }}
-          />
-        </svg>
-        <span className="absolute text-[8px] font-bold text-white">95%</span>
-      </div>
-    </div>
-  );
-}
-
-function ChennaiMiniChart() {
-  return (
-    <div className="h-16 w-full flex items-center justify-between bg-white/[0.02] border border-white/5 rounded-xl p-3 relative overflow-hidden">
-      <div className="flex flex-col text-left">
-        <span className="text-[9px] text-gray-400 font-semibold uppercase tracking-wider">Coal Substitution</span>
-        <span className="text-xs font-bold text-amber-400">35% Avg Yield</span>
-      </div>
-      <div className="flex items-end gap-1.5 h-8">
-        {[40, 65, 50, 85].map((val, i) => (
-          <div key={i} className="w-2.5 bg-white/5 rounded-t-[2px] h-full flex items-end">
-            <motion.div
-              className="w-full rounded-t-[2px] bg-amber-500"
-              initial={{ height: 0 }}
-              whileInView={{ height: `${val}%` }}
-              viewport={{ once: true }}
-              transition={{ duration: 1, delay: i * 0.15 }}
-            />
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-}
 
 export default function Impact({ sectionId }: ImpactProps) {
   const [activeTab, setActiveTab] = useState<'waste' | 'carbon' | 'energy'>('waste');
   const [activeReportProject, setActiveReportProject] = useState<any | null>(null);
-  const [hoveredCardId, setHoveredCardId] = useState<string | null>(null);
   const heroRef = useRef<HTMLDivElement>(null);
   const { scrollY } = useScroll();
   const yBg = useTransform(scrollY, [0, 500], [0, 150]);
@@ -414,59 +328,6 @@ export default function Impact({ sectionId }: ImpactProps) {
 
   ];
 
-  const projects = [
-    {
-      id: 'punjab',
-      title: 'Punjab Biomass Cluster',
-      location: 'Patiala, Punjab',
-      capacity: '120 Tons/Day',
-      desc: 'A decentralized network of agricultural residue processing stations that gathers paddy straw directly from local farming communities. We process straw into fuel briquettes, reducing open field burning.',
-      highlights: ['Diverted 40,000+ tons of crop stubble', 'Supports 1,200+ local farming families', 'Supplies local industrial boilers'],
-      image: '/biomass-fuels.jpg',
-      status: 'Active',
-      score: 96,
-      overlayBadge: '120 Tons/Day',
-      stats: [
-        { from: 0, to: 40000, suffix: '+ Tons', label: 'Crop Waste Diverted' },
-        { from: 0, to: 1200, suffix: '+', label: 'Farming Families Supported' },
-        { from: 0, to: 18500, suffix: ' tCO2e', label: 'Emissions Mitigated' }
-      ]
-    },
-    {
-      id: 'karnataka',
-      title: 'Karnataka Biogas Plant',
-      location: 'Dharwad, Karnataka',
-      capacity: '80 Tons/Day Organic Waste',
-      desc: 'State-of-the-art anaerobic digestion facility processing municipal food waste and fruit market waste. Renders clean, grid-ready biogas and high-yield bio-compost for nearby farming clusters.',
-      highlights: ['95% purity Bio-CNG yield', '12 Tons/Day organic compost produced', 'Direct partnership with municipal corporation'],
-      image: '/biogas-plant.jpg',
-      status: 'Active',
-      score: 94,
-      overlayBadge: '80 Tons/Day Organic Waste',
-      stats: [
-        { from: 0, to: 95, suffix: '%', label: 'Bio-CNG Purity' },
-        { from: 0, to: 12, suffix: ' Tons', label: 'Compost Daily' },
-        { from: 0, to: 4800, suffix: ' MWh', label: 'Green Energy Output' }
-      ]
-    },
-    {
-      id: 'rdf-unit',
-      title: 'Industrial RDF Supply Unit',
-      location: 'Chennai, Tamil Nadu',
-      capacity: '200 Tons/Day',
-      desc: 'Advanced automated sorting plant that processes municipal dry waste and industrial scrap. Extracts high-value combustible materials to produce Refuse Derived Fuel (RDF) for heavy manufacturing clients.',
-      highlights: ['Replaces up to 35% of coal requirements in local kiln', 'Strict moisture control under 12%', 'Supplies regional cement manufacturing plants'],
-      image: '/rdf-processing.jpg',
-      status: 'Active',
-      score: 98,
-      overlayBadge: '200 Tons/Day',
-      stats: [
-        { from: 0, to: 65000, suffix: '+ Tons', label: 'Landfill Waste Processed' },
-        { from: 0, to: 35, suffix: '%', label: 'Coal Replacement' },
-        { from: 0, to: 98, suffix: '%', label: 'Recovery Efficiency' }
-      ]
-    },
-  ];
 
   return (
     <div className="min-h-screen bg-white">
