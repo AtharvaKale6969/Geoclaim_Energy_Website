@@ -349,7 +349,7 @@ export default function Contact() {
                     </div>
                     <div>
                       <h4 className="text-xs font-bold text-white uppercase tracking-wider mb-1">Phone</h4>
-                      <p className="text-gray-400 text-sm">+91 7123100024</p>
+                      <p className="text-gray-400 text-sm">+91 7447586067</p>
                     </div>
                   </div>
 
@@ -376,7 +376,7 @@ export default function Contact() {
             >
               <div className="absolute inset-0 bg-[#00A8C6]/20 mix-blend-overlay pointer-events-none z-10 transition-opacity duration-500 group-hover:opacity-0" />
               <iframe
-                src="https://maps.google.com/maps?q=Plot%20No%2012A,%201st%20Floor,%20Smruti%20Nagar%20Rd,%20Smruti%20Nagar,%20Koradi,%20Bokara,%20Nagpur,%20Maharashtra%20441111&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                src="https://maps.google.com/maps?q=21.2166221,79.079491&t=&z=18&ie=UTF8&iwloc=&output=embed"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
